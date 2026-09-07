@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Sundae</title>
+    <meta name="description" content="How Sundae collects, uses and protects your personal data.">
+    <meta name="theme-color" content="#F7F5F2">
+    <meta name="robots" content="index, follow">
+
+    <style>
+        :root {
+            --bg: #F7F5F2;
+            --ink: #171717;
+            --ink-soft: #292724;
+            --muted: #55514C;
+            --muted-2: #77736D;
+            --faint: #99958F;
+            --line: #E4E0DA;
+            --line-strong: #D8D4CE;
+            --card: #ECE9E4;
+            --white: #FFFFFF;
+            --dark: #171717;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink-soft);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a { color: inherit; }
+
+        img { max-width: 100%; display: block; }
+
+        .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV */
+        nav {
+            border-bottom: 1px solid var(--line);
+            background: rgba(247, 245, 242, .9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav .wrap {
+            max-width: 1180px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo { font-size: 22px; font-weight: 600; letter-spacing: -1px; color: var(--ink); }
+        .back { font-size: 14px; color: var(--muted-2); }
+        .back:hover { color: var(--ink); }
+
+        /* HEADER */
+        header.doc {
+            padding: clamp(56px, 9vw, 100px) 0 40px;
+            border-bottom: 1px solid var(--line);
+        }
+        header.doc .eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            color: var(--faint);
+        }
+        header.doc h1 {
+            margin-top: 18px;
+            font-size: clamp(38px, 7vw, 60px);
+            line-height: 1.02;
+            letter-spacing: -0.045em;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        header.doc .meta {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--muted-2);
+        }
+
+        /* CONTENT */
+        main { padding: 48px 0 96px; }
+
+        .toc {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 24px 26px;
+            margin-bottom: 56px;
+        }
+        .toc h2 {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--faint);
+            margin-bottom: 14px;
+        }
+        .toc ol { margin: 0; padding-left: 20px; display: grid; gap: 7px; }
+        .toc li { font-size: 14px; }
+        .toc a { color: var(--muted); text-decoration: none; }
+        .toc a:hover { color: var(--ink); text-decoration: underline; }
+
+        section.block { margin-bottom: 48px; scroll-margin-top: 84px; }
+
+        section.block h2 {
+            font-size: clamp(22px, 3.4vw, 28px);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+
+        section.block h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ink-soft);
+            margin: 24px 0 8px;
+        }
+
+        section.block p { margin-bottom: 14px; color: var(--muted); }
+
+        section.block ul { margin: 0 0 14px; padding-left: 22px; color: var(--muted); }
+        section.block li { margin-bottom: 7px; }
+
+        section.block a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+
+        strong { color: var(--ink-soft); font-weight: 600; }
+
+        .callout {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 20px 22px;
+            margin: 20px 0;
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        .placeholder {
+            background: #efe7d9;
+            border-radius: 4px;
+            padding: 1px 5px;
+            font-size: .95em;
+            color: #6b5a3c;
+        }
+
+        table.data {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0 18px;
+            font-size: 14px;
+        }
+        table.data th, table.data td {
+            text-align: left;
+            vertical-align: top;
+            padding: 12px 12px;
+            border-bottom: 1px solid var(--line-strong);
+            color: var(--muted);
+        }
+        table.data th { color: var(--ink-soft); font-weight: 600; width: 34%; }
+        .table-scroll { overflow-x: auto; }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 40px 0;
+            font-size: 13px;
+            color: var(--faint);
+        }
+        footer .wrap {
+            max-width: 1180px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        footer a { color: var(--muted-2); text-decoration: none; }
+        footer a:hover { color: var(--ink); }
+        footer .links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+        @media (max-width: 600px) {
+            table.data th { width: auto; }
+            table.data, table.data tbody, table.data tr, table.data th, table.data td { display: block; }
+            table.data th { border-bottom: none; padding-bottom: 2px; }
+            table.data td { padding-top: 2px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="wrap">
+            <a href="index.html" class="logo">sundae</a>
+            <a href="index.html" class="back">← Back to site</a>
+        </div>
+    </nav>
+
+    <header class="doc">
+        <div class="wrap">
+            <span class="eyebrow">Legal</span>
+            <h1>Privacy Policy</h1>
+            <p class="meta">
+                Last updated: 7&nbsp;September&nbsp;2026 · Applies to the Sundae mobile
+                app and this website.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <div class="callout">
+                <strong>The short version.</strong> Sundae is a dating app. To match you
+                with one person a week, we process your profile, a personality test,
+                your approximate location and your feedback. We don't sell your data,
+                we don't run advertising trackers, and you can delete everything from
+                the app at any time. The full detail is below.
+            </div>
+
+            <nav class="toc" aria-label="Contents">
+                <h2>Contents</h2>
+                <ol>
+                    <li><a href="#controller">Who is responsible</a></li>
+                    <li><a href="#scope">Scope of this policy</a></li>
+                    <li><a href="#data">What data we process</a></li>
+                    <li><a href="#purposes">Why we process it and our legal basis</a></li>
+                    <li><a href="#special">Sensitive data and consent</a></li>
+                    <li><a href="#sharing">Who we share data with</a></li>
+                    <li><a href="#transfers">International data transfers</a></li>
+                    <li><a href="#retention">How long we keep data</a></li>
+                    <li><a href="#matching">How matching works</a></li>
+                    <li><a href="#rights">Your rights</a></li>
+                    <li><a href="#delete">Deleting your account</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#children">Age limit</a></li>
+                    <li><a href="#website">This website</a></li>
+                    <li><a href="#changes">Changes to this policy</a></li>
+                    <li><a href="#contact">Contact and complaints</a></li>
+                </ol>
+            </nav>
+
+            <section class="block" id="controller">
+                <h2>1. Who is responsible</h2>
+                <p>
+                    The controller responsible for processing your personal data under
+                    the EU General Data Protection Regulation (GDPR) and the German
+                    Federal Data Protection Act (BDSG) is:
+                </p>
+                <p>
+                    <span class="placeholder">[FULL NAME]</span><br>
+                    <span class="placeholder">[STREET AND HOUSE NUMBER]</span><br>
+                    <span class="placeholder">[POSTAL CODE, CITY]</span><br>
+                    <span class="placeholder">[COUNTRY]</span><br>
+                    Email: <a href="mailto:support@sundae.pro">support@sundae.pro</a>
+                </p>
+                <p>
+                    Sundae is operated by an individual. We are not legally required to
+                    appoint a data protection officer, and we have not appointed one. For
+                    any privacy question, use the contact address above.
+                </p>
+            </section>
+
+            <section class="block" id="scope">
+                <h2>2. Scope of this policy</h2>
+                <p>
+                    This policy explains how we handle personal data when you use the
+                    Sundae mobile application (the <strong>“app”</strong>) and when you
+                    visit this website. It does not cover third-party services that we
+                    link to but do not operate (for example the Apple App Store or Google
+                    Play), which have their own privacy policies.
+                </p>
+            </section>
+
+            <section class="block" id="data">
+                <h2>3. What data we process</h2>
+                <p>
+                    We only collect what we need to run a weekly-match dating service.
+                    Depending on how you use Sundae, this includes:
+                </p>
+
+                <div class="table-scroll">
+                <table class="data">
+                    <tr>
+                        <th>Account</th>
+                        <td>Email address and a securely hashed password (handled by our
+                            authentication provider), account creation date, language
+                            preference, and whether you have accepted the terms.</td>
+                    </tr>
+                    <tr>
+                        <th>Profile</th>
+                        <td>First name, age, gender, who you want to meet, a profile photo,
+                            and — if you add them — additional photos, a short bio, prompt
+                            answers, height, interests, relationship intentions, relationship
+                            style, and whether you have or want children.</td>
+                    </tr>
+                    <tr>
+                        <th>Personality test</th>
+                        <td>Your answers to the one-time personality questionnaire and the
+                            personality profile calculated from them. This is used for
+                            matching and for your personal insights.</td>
+                    </tr>
+                    <tr>
+                        <th>Location</th>
+                        <td>If you grant permission, your approximate coordinates and the
+                            city derived from them, plus your chosen search radius. Used to
+                            match you with people nearby. You can use the app without
+                            precise location by entering a city.</td>
+                    </tr>
+                    <tr>
+                        <th>Matches &amp; messages</th>
+                        <td>Records of who you were matched with and when, the compatibility
+                            score, match status, and the messages you exchange with a match.</td>
+                    </tr>
+                    <tr>
+                        <th>Feedback &amp; traits</th>
+                        <td>The answers you give after a match ends (how it went, selected
+                            traits, whether you'd meet again, what happened afterwards), and
+                            the aggregated “traits people notice” shown on your profile and
+                            to your matches.</td>
+                    </tr>
+                    <tr>
+                        <th>Safety &amp; moderation</th>
+                        <td>Blocks you create, and reports you submit or that are submitted
+                            about you, including the reason and related match. We keep this
+                            to operate the service safely and to handle abuse.</td>
+                    </tr>
+                    <tr>
+                        <th>Subscription</th>
+                        <td>Whether Sundae+ is active for your account and when it started.
+                            Payment itself is processed by Apple or Google — we do not
+                            receive your card details.</td>
+                    </tr>
+                    <tr>
+                        <th>Device &amp; notifications</th>
+                        <td>If you enable push notifications, a push token for your device
+                            and your notification preference. Basic technical data
+                            (app version, platform) may be included in error logs.</td>
+                    </tr>
+                    <tr>
+                        <th>Support</th>
+                        <td>The content of emails you send us and our replies.</td>
+                    </tr>
+                    <tr>
+                        <th>Website</th>
+                        <td>Server logs kept by our hosting provider (see section 14) and
+                            the email address you enter into the waitlist form, which is
+                            sent to us by your own email app.</td>
+                    </tr>
+                </table>
+                </div>
+
+                <p>
+                    We do <strong>not</strong> use advertising SDKs, cross-app tracking,
+                    or third-party analytics that build a profile of you.
+                </p>
+            </section>
+
+            <section class="block" id="purposes">
+                <h2>4. Why we process it and our legal basis</h2>
+                <div class="table-scroll">
+                <table class="data">
+                    <tr>
+                        <th>Providing the service — creating your account, building your
+                            profile, generating and delivering one match per week,
+                            enabling chat, running the weekly cycle</th>
+                        <td>Performance of a contract with you — Art. 6(1)(b) GDPR</td>
+                    </tr>
+                    <tr>
+                        <th>Personality test, feedback and insights used to improve future
+                            matches for you</th>
+                        <td>Performance of a contract — Art. 6(1)(b) GDPR; for the
+                            sensitive aspects, your explicit consent — Art. 9(2)(a) GDPR</td>
+                    </tr>
+                    <tr>
+                        <th>Precise location and push notifications</th>
+                        <td>Your consent, given through the operating system permission
+                            prompt — Art. 6(1)(a) GDPR. You can withdraw it in your device
+                            settings at any time.</td>
+                    </tr>
+                    <tr>
+                        <th>Optional profile fields (bio, extra photos, prompts, height,
+                            children, relationship style, interests)</th>
+                        <td>Your consent by choosing to provide them — Art. 6(1)(a) and,
+                            where sensitive, Art. 9(2)(a) GDPR</td>
+                    </tr>
+                    <tr>
+                        <th>Safety, moderation, preventing and investigating abuse, keeping
+                            the service secure</th>
+                        <td>Our legitimate interests and those of other users in a safe
+                            service — Art. 6(1)(f) GDPR; and compliance with legal
+                            obligations — Art. 6(1)(c) GDPR</td>
+                    </tr>
+                    <tr>
+                        <th>Handling support requests</th>
+                        <td>Performance of a contract and our legitimate interest in
+                            helping users — Art. 6(1)(b) and (f) GDPR</td>
+                    </tr>
+                    <tr>
+                        <th>Complying with legal requests and defending legal claims</th>
+                        <td>Legal obligation — Art. 6(1)(c) GDPR; legitimate interests —
+                            Art. 6(1)(f) GDPR</td>
+                    </tr>
+                    <tr>
+                        <th>Operating this website and the waitlist</th>
+                        <td>Our legitimate interest in presenting and offering the
+                            service — Art. 6(1)(f) GDPR; for the waitlist email, your
+                            consent by submitting it — Art. 6(1)(a) GDPR</td>
+                    </tr>
+                </table>
+                </div>
+            </section>
+
+            <section class="block" id="special">
+                <h2>5. Sensitive data and consent</h2>
+                <p>
+                    By its nature, a dating profile can reveal information that the GDPR
+                    treats as a <strong>special category</strong> (Art. 9) — in
+                    particular data concerning your sex life or sexual orientation, which
+                    may be inferred from the gender you want to meet, and any health,
+                    religious or similar details you choose to write in your bio or
+                    prompts.
+                </p>
+                <p>
+                    We process this data solely to provide the matching service you
+                    signed up for, on the basis of your <strong>explicit consent</strong>
+                    under Art. 9(2)(a) GDPR. You give this consent when you create your
+                    profile and enter Sundae. You can withdraw it at any time by editing
+                    or removing the relevant fields, or by deleting your account — this
+                    does not affect processing that happened before withdrawal.
+                </p>
+                <div class="callout">
+                    Please only put information in free-text fields (bio, prompts,
+                    messages) that you are comfortable sharing with a match.
+                </div>
+            </section>
+
+            <section class="block" id="sharing">
+                <h2>6. Who we share data with</h2>
+
+                <h3>Other users</h3>
+                <p>
+                    When you are matched, your match can see your profile: your first
+                    name, age, photo (blurred until the reveal), city or approximate
+                    distance, prompts, interests and the traits others have noticed. With
+                    Sundae+, a match can also see the optional details you added. Your
+                    email, exact coordinates, personality answers and feedback are never
+                    shown to other users.
+                </p>
+
+                <h3>Service providers (processors)</h3>
+                <p>
+                    We use a small number of providers that process data on our behalf
+                    under data processing agreements:
+                </p>
+                <ul>
+                    <li><strong>Supabase</strong> — database, authentication, file storage
+                        (your photos) and realtime messaging. This is where your Sundae
+                        data is stored. See
+                        <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>.</li>
+                    <li><strong>Expo</strong> (Expo Application Services) — delivery of push
+                        notifications via a device push token, if you enable them. See
+                        <a href="https://expo.dev/privacy" target="_blank" rel="noopener">expo.dev/privacy</a>.</li>
+                    <li><strong>Our email provider</strong> — sending account emails such as
+                        email confirmation and password resets.
+                        <span class="placeholder">[EMAIL PROVIDER, e.g. the provider behind support@sundae.pro / Supabase default]</span></li>
+                    <li><strong>Our website host</strong> —
+                        <span class="placeholder">[HOSTING PROVIDER, e.g. Netlify / Vercel / GitHub Pages / Hetzner]</span>,
+                        which serves this website and keeps standard server logs.</li>
+                </ul>
+
+                <h3>App stores and payments</h3>
+                <p>
+                    If you subscribe to Sundae+, the purchase is handled by
+                    <strong>Apple</strong> or <strong>Google</strong> under their own
+                    terms and privacy policies. They tell us that a subscription is
+                    active; they do not share your payment details with us.
+                </p>
+
+                <h3>Legal reasons</h3>
+                <p>
+                    We may disclose data if we are legally required to, or where it is
+                    necessary to enforce our terms, protect the safety of users, or
+                    establish, exercise or defend legal claims.
+                </p>
+
+                <p>We do not sell your personal data and we do not share it for advertising.</p>
+            </section>
+
+            <section class="block" id="transfers">
+                <h2>7. International data transfers</h2>
+                <p>
+                    Some of our providers may process data outside the European Economic
+                    Area, including in the United States. Where that happens, the transfer
+                    is protected by an adequacy decision of the European Commission or by
+                    <strong>Standard Contractual Clauses</strong> together with additional
+                    safeguards. You can request a copy of the relevant safeguards using
+                    the contact details in section 16.
+                </p>
+                <p class="placeholder">
+                    [Confirm and, if you can, name the storage region you selected in
+                    Supabase — e.g. “Sundae data is stored in the EU (Frankfurt) region.”]
+                </p>
+            </section>
+
+            <section class="block" id="retention">
+                <h2>8. How long we keep data</h2>
+                <ul>
+                    <li><strong>Account and profile data</strong> — for as long as your
+                        account exists. When you delete your account, this data is deleted
+                        or anonymised without undue delay.</li>
+                    <li><strong>Photos</strong> — deleted from storage when you remove them
+                        or delete your account.</li>
+                    <li><strong>Matches, messages and feedback</strong> — kept while your
+                        account is active so the service and your insights work, and
+                        deleted or anonymised when you delete your account. Your match's
+                        copy of messages you sent them may remain visible to that person.</li>
+                    <li><strong>Moderation records</strong> (reports, blocks, bans) — kept
+                        for up to <span class="placeholder">[e.g. 12–24 months]</span>
+                        after the event, or longer if needed to handle repeat abuse or a
+                        legal claim, even after account deletion, in a minimised form.</li>
+                    <li><strong>Support emails</strong> — kept for up to
+                        <span class="placeholder">[e.g. 24 months]</span> after the request
+                        is closed.</li>
+                    <li><strong>Website server logs</strong> — kept for a short period by
+                        our host (typically up to a few weeks) for security and
+                        troubleshooting.</li>
+                    <li>Where we are subject to statutory retention periods (for example
+                        under tax or commercial law), we keep the relevant records for as
+                        long as the law requires and restrict processing in the meantime.</li>
+                </ul>
+            </section>
+
+            <section class="block" id="matching">
+                <h2>9. How matching works</h2>
+                <p>
+                    Once per weekly cycle, Sundae selects one candidate for you. The
+                    selection uses your personality profile, your stated preferences
+                    (who you want to meet, age range, distance), your location, and
+                    signals from your past matches and feedback. A compatibility score is
+                    calculated and shown to you.
+                </p>
+                <p>
+                    This is an automated selection, but it does not produce a legal or
+                    similarly significant effect on you within the meaning of Art. 22
+                    GDPR — it simply proposes a person to talk to, and you are free to
+                    end any match. If you would like a human to review how a match was
+                    generated, contact us.
+                </p>
+            </section>
+
+            <section class="block" id="rights">
+                <h2>10. Your rights</h2>
+                <p>Under the GDPR you have the right to:</p>
+                <ul>
+                    <li>access the personal data we hold about you (Art. 15);</li>
+                    <li>have inaccurate data corrected (Art. 16);</li>
+                    <li>have your data erased (Art. 17);</li>
+                    <li>restrict processing in certain cases (Art. 18);</li>
+                    <li>receive certain data in a portable, machine-readable format
+                        (Art. 20);</li>
+                    <li>object to processing based on our legitimate interests, on grounds
+                        relating to your particular situation (Art. 21);</li>
+                    <li>withdraw any consent you have given, at any time, without
+                        affecting processing that already took place (Art. 7(3)).</li>
+                </ul>
+                <p>
+                    To exercise any of these rights, email
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a>. We may ask
+                    you to confirm the email address on your account so we can be sure
+                    it's you. We respond within one month.
+                </p>
+            </section>
+
+            <section class="block" id="delete">
+                <h2>11. Deleting your account</h2>
+                <p>
+                    You can delete your account yourself at any time:
+                    <strong>Settings → Account → Delete account</strong>. This ends any
+                    active match, removes your profile and photos, and deletes or
+                    anonymises your data as described in section 8. Some minimised
+                    safety records may be retained as set out above. You can also ask us
+                    to delete your account by email.
+                </p>
+            </section>
+
+            <section class="block" id="security">
+                <h2>12. Security</h2>
+                <p>
+                    Data is transmitted over encrypted connections (TLS). Access to
+                    stored data is protected by database access rules that limit what
+                    each account can read and write, and by restricted administrative
+                    access. Passwords are stored only as salted hashes by our
+                    authentication provider. No online service can be guaranteed to be
+                    completely secure, but we work to protect your data and to notify you
+                    and the authorities if a breach ever legally requires it.
+                </p>
+            </section>
+
+            <section class="block" id="children">
+                <h2>13. Age limit</h2>
+                <p>
+                    Sundae is only for people aged <strong>18 or older</strong>. We do not
+                    knowingly process data of anyone under 18. If we learn that an account
+                    belongs to a minor, we will delete it.
+                </p>
+            </section>
+
+            <section class="block" id="website">
+                <h2>14. This website</h2>
+                <p>
+                    This website is a static information site. It does <strong>not</strong>
+                    set advertising or analytics cookies and does not embed third-party
+                    trackers. A theme colour preference and similar minor settings, if
+                    any, are stored only in your browser.
+                </p>
+                <p>
+                    When you load the site, our hosting provider automatically receives
+                    technical information that your browser sends, such as your IP
+                    address, the requested page, referrer, timestamp and user-agent.
+                    This is processed on the basis of our legitimate interest
+                    (Art. 6(1)(f) GDPR) in operating and securing the site, and is kept
+                    only briefly.
+                </p>
+                <p>
+                    The waitlist form does not send data to a server. When you submit it,
+                    your own email app opens a pre-filled message to
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a>; the email
+                    is only sent if you send it. We use the address you provide to notify
+                    you about the launch, and delete it afterwards or on request.
+                </p>
+            </section>
+
+            <section class="block" id="changes">
+                <h2>15. Changes to this policy</h2>
+                <p>
+                    We may update this policy as the app evolves or the law changes. The
+                    “last updated” date at the top always reflects the current version.
+                    For significant changes we will give notice in the app or by email
+                    before they take effect.
+                </p>
+            </section>
+
+            <section class="block" id="contact">
+                <h2>16. Contact and complaints</h2>
+                <p>
+                    For any privacy question or request, contact
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a>.
+                </p>
+                <p>
+                    If you believe our processing of your data infringes the GDPR, you
+                    have the right to lodge a complaint with a supervisory authority, in
+                    particular in the EU member state of your habitual residence, place
+                    of work, or the place of the alleged infringement. The authority
+                    responsible for the controller is:
+                </p>
+                <p class="placeholder">
+                    [Your competent authority — e.g. Der Landesbeauftragte für den
+                    Datenschutz [BUNDESLAND], address, website. Fill in based on where you
+                    live.]
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <span>© <span id="year">2026</span> Sundae</span>
+            <span class="links">
+                <a href="index.html">Home</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="imprint.html">Legal notice</a>
+            </span>
+        </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
