@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutzungsbedingungen — Sundae</title>
+    <meta name="description" content="Die Regeln für die Nutzung der Sundae-App und -Website.">
+    <meta name="theme-color" content="#F7F5F2">
+    <meta name="robots" content="index, follow">
+
+    <style>
+        :root {
+            --bg: #F7F5F2;
+            --ink: #171717;
+            --ink-soft: #292724;
+            --muted: #55514C;
+            --muted-2: #77736D;
+            --faint: #99958F;
+            --line: #E4E0DA;
+            --line-strong: #D8D4CE;
+            --card: #ECE9E4;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink-soft);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a { color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+        body > nav {
+            border-bottom: 1px solid var(--line);
+            background: var(--bg);
+        }
+        body > nav .wrap {
+            max-width: 1180px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo { font-size: 22px; font-weight: 600; letter-spacing: -1px; color: var(--ink); }
+        .back { font-size: 14px; color: var(--muted-2); }
+        .back:hover { color: var(--ink); }
+        .navright { display: flex; align-items: center; gap: 16px; }
+        .langswitch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: 12px; font-weight: 600; }
+        .langswitch a { padding: 5px 10px; color: var(--muted-2); text-decoration: none; }
+        .langswitch a.on { background: var(--ink); color: #fff; }
+        @media (max-width: 520px) {
+            body > nav .wrap { height: auto; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; gap: 10px; }
+        }
+
+        header.doc {
+            padding: clamp(56px, 9vw, 100px) 0 40px;
+            border-bottom: 1px solid var(--line);
+        }
+        header.doc .eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            color: var(--faint);
+        }
+        header.doc h1 {
+            margin-top: 18px;
+            font-size: clamp(34px, 6.5vw, 56px);
+            line-height: 1.04;
+            letter-spacing: -0.04em;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        header.doc .meta { margin-top: 20px; font-size: 14px; color: var(--muted-2); }
+
+        main { padding: 48px 0 96px; }
+
+        .toc {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 24px 26px;
+            margin-bottom: 56px;
+        }
+        .toc h2 {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--faint);
+            margin-bottom: 14px;
+        }
+        .toc ol { margin: 0; padding-left: 20px; display: grid; gap: 7px; }
+        .toc li { font-size: 14px; }
+        .toc a { color: var(--muted); text-decoration: none; }
+        .toc a:hover { color: var(--ink); text-decoration: underline; }
+
+        section.block { margin-bottom: 44px; scroll-margin-top: 24px; }
+        section.block h2 {
+            font-size: clamp(21px, 3.2vw, 27px);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+        section.block h3 { font-size: 16px; font-weight: 600; color: var(--ink-soft); margin: 22px 0 8px; }
+        section.block p { margin-bottom: 14px; color: var(--muted); }
+        section.block ul { margin: 0 0 14px; padding-left: 22px; color: var(--muted); }
+        section.block li { margin-bottom: 7px; }
+        section.block a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+
+        strong { color: var(--ink-soft); font-weight: 600; }
+
+        .callout {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 20px 22px;
+            margin: 20px 0;
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        .flag {
+            border-left: 3px solid var(--ink);
+            background: #efe9e1;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin: 20px 0;
+            color: var(--ink-soft);
+        }
+        .flag strong { display: block; margin-bottom: 6px; }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 40px 0;
+            font-size: 13px;
+            color: var(--faint);
+        }
+        footer .wrap {
+            max-width: 1180px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        footer a { color: var(--muted-2); text-decoration: none; }
+        footer a:hover { color: var(--ink); }
+        footer .links { display: flex; gap: 20px; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="wrap">
+            <a href="index.html" class="logo">sundae</a>
+            <span class="navright">
+                <span class="langswitch">
+                    <a href="terms.html">EN</a>
+                    <a class="on" href="nutzungsbedingungen.html">DE</a>
+                </span>
+                <a href="index.html" class="back">← Zur Website</a>
+            </span>
+        </div>
+    </nav>
+
+    <header class="doc">
+        <div class="wrap">
+            <span class="eyebrow">Rechtliches</span>
+            <h1>Nutzungsbedingungen</h1>
+            <p class="meta">
+                Stand: 9.&nbsp;September&nbsp;2026 · Wirksam mit Erstellung eines Kontos
+                oder sonstiger Nutzung von Sundae.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <div class="callout">
+                <strong>In Kürze.</strong> Sundae gibt Ihnen ein Match pro
+                wöchentlichem Zyklus, keinen Feed, kein Swipen. Sie müssen mindestens
+                18&nbsp;Jahre alt sein, ehrlich sein, Ihr Match anständig behandeln und
+                den Dienst nicht missbrauchen. Für anstößige Inhalte und missbräuchliche
+                Nutzer:innen gilt <strong>Nulltoleranz</strong> — Melden oder Blockieren
+                ist aus jedem Chat möglich, und wir handeln innerhalb von
+                24&nbsp;Stunden. Sie können Sundae+ jederzeit kündigen oder Ihr Konto
+                löschen. Rechtlich verbindlich sind die vollständigen Bedingungen unten.
+            </div>
+
+            <nav class="toc" aria-label="Inhalt">
+                <h2>Inhalt</h2>
+                <ol>
+                    <li><a href="#anbieter">Anbieter von Sundae</a></li>
+                    <li><a href="#annahme">Annahme dieser Bedingungen</a></li>
+                    <li><a href="#voraussetzungen">Nutzungsvoraussetzungen</a></li>
+                    <li><a href="#dienst">Der Dienst</a></li>
+                    <li><a href="#konto">Ihr Konto</a></li>
+                    <li><a href="#verhalten">Verhaltensregeln</a></li>
+                    <li><a href="#anstoessig">Nulltoleranz für anstößige Inhalte</a></li>
+                    <li><a href="#inhalte">Ihre Inhalte</a></li>
+                    <li><a href="#sicherheit">Sicherheit und persönliche Treffen</a></li>
+                    <li><a href="#plus">Sundae+ Abonnement</a></li>
+                    <li><a href="#moderation">Moderation, Meldungen und Sperren</a></li>
+                    <li><a href="#beendigung">Beendigung der Nutzung</a></li>
+                    <li><a href="#verfuegbarkeit">Verfügbarkeit und Änderungen</a></li>
+                    <li><a href="#haftung">Haftung</a></li>
+                    <li><a href="#schutzrechte">Unsere Schutzrechte</a></li>
+                    <li><a href="#recht">Anwendbares Recht und Streitigkeiten</a></li>
+                    <li><a href="#schluss">Schlussbestimmungen</a></li>
+                    <li><a href="#dokumente">Ergänzende Dokumente und Impressum</a></li>
+                </ol>
+            </nav>
+
+            <section class="block" id="anbieter">
+                <h2>1. Anbieter von Sundae</h2>
+                <p>
+                    Sundae (die <strong>„App“</strong>) und diese Website
+                    (<strong>sundae.pro</strong>) werden angeboten von Philipp Ludwig
+                    Syring, Lange-Geismar-Str. 62, 37073 Göttingen, Deutschland —
+                    nachfolgend <strong>„wir“</strong>, <strong>„uns“</strong> oder
+                    <strong>„Sundae“</strong>.
+                </p>
+                <p>
+                    Kontakt: <a href="mailto:support@sundae.pro">support@sundae.pro</a>.
+                    Die vollständige Anbieterkennzeichnung finden Sie im
+                    <a href="impressum.html">Impressum</a>.
+                </p>
+            </section>
+
+            <section class="block" id="annahme">
+                <h2>2. Annahme dieser Bedingungen</h2>
+                <p>
+                    Diese Nutzungsbedingungen bilden einen verbindlichen Vertrag zwischen
+                    Ihnen und uns über die Nutzung von Sundae. Mit der Erstellung eines
+                    Kontos, dem Setzen des Häkchens zur Zustimmung oder der Nutzung der
+                    App stimmen Sie diesen Bedingungen und unserer
+                    <a href="datenschutz.html">Datenschutzerklärung</a> zu. Wenn Sie nicht
+                    einverstanden sind, nutzen Sie Sundae nicht.
+                </p>
+                <p>
+                    Wenn Sie Sundae über den Apple App Store oder Google Play nutzen,
+                    gelten für den Download und etwaige Käufe zusätzlich die Bedingungen
+                    des jeweiligen Stores.
+                </p>
+            </section>
+
+            <section class="block" id="voraussetzungen">
+                <h2>3. Nutzungsvoraussetzungen</h2>
+                <ul>
+                    <li>Sie müssen mindestens <strong>18&nbsp;Jahre alt</strong> und
+                        geschäftsfähig sein. Sie geben bei der Registrierung Ihr
+                        Geburtsdatum an, damit wir dies prüfen können; die Angabe eines
+                        falschen Geburtsdatums ist ein Verstoß gegen diese Bedingungen.</li>
+                    <li>Sie dürfen nur <strong>ein Konto</strong> führen, für sich selbst,
+                        als natürliche Person. Sundae ist für die persönliche, nicht
+                        gewerbliche Nutzung bestimmt.</li>
+                    <li>Ihre Registrierungs- und Profilangaben müssen zutreffend sein und
+                        aktuell gehalten werden. Insbesondere müssen Ihre Fotos Sie
+                        tatsächlich zeigen und einigermaßen aktuell sein.</li>
+                    <li>Sie dürfen Sundae nicht nutzen, wenn Sie zuvor gesperrt wurden oder
+                        wenn geltendes Recht Ihnen die Nutzung eines solchen Dienstes
+                        verbietet.</li>
+                    <li>Sie dürfen nicht wegen einer schweren Gewalt- oder Sexualstraftat
+                        verurteilt worden sein.</li>
+                </ul>
+            </section>
+
+            <section class="block" id="dienst">
+                <h2>4. Der Dienst</h2>
+                <p>Sundae ist ein Dating-Dienst mit bewusst begrenztem Design:</p>
+                <ul>
+                    <li>Sie absolvieren einen einmaligen Persönlichkeitstest und legen Ihre
+                        Präferenzen fest.</li>
+                    <li>Einmal pro wöchentlichem Zyklus stellt Sundae Ihnen
+                        <strong>eine</strong> andere Person vor, die automatisch anhand von
+                        Persönlichkeit, Präferenzen, Entfernung und Signalen aus Ihren
+                        bisherigen Matches ausgewählt wird. Die Hauptvorstellung erfolgt
+                        sonntags; wurden Sie nicht gematcht, kann Sundae unter der Woche
+                        einen weiteren Versuch unternehmen.</li>
+                    <li>Jedes Match läuft für einen begrenzten Zeitraum (bis zu etwa einer
+                        Woche und nicht länger als der laufende Zyklus). Beide Seiten
+                        können es früher beenden. Danach werden Sie ggf. um kurzes Feedback
+                        gebeten.</li>
+                    <li>Das Foto eines Matches wird zunächst unscharf angezeigt und im
+                        Verlauf des Gesprächs schrittweise enthüllt.</li>
+                    <li>Während eines Matches kann Ihr Match das aus Ihrem Test abgeleitete
+                        Persönlichkeitsprofil sehen (als Kompatibilitätshinweis, nicht Ihre
+                        einzelnen Antworten) und — mit Sundae+ — Ihr vollständiges Profil
+                        sowie später einen Verlauf vergangener Matches.</li>
+                    <li>Es gibt keinen Feed zum Durchstöbern und keine Möglichkeit, gezielt
+                        nach bestimmten Personen zu suchen oder sie auszuwählen.</li>
+                </ul>
+                <p>
+                    Wir <strong>gewährleisten nicht</strong>, dass Sie in einem
+                    bestimmten Zyklus ein Match erhalten, dass ein Match antwortet, dass
+                    eine Verbindung entsteht oder dass die Angaben anderer Nutzer:innen
+                    zutreffen. Matching-Logik, Zeitpunkte und Funktionen können sich im
+                    Laufe der Zeit ändern.
+                </p>
+            </section>
+
+            <section class="block" id="konto">
+                <h2>5. Ihr Konto</h2>
+                <p>
+                    Halten Sie Ihre Zugangsdaten geheim und lassen Sie niemanden sonst Ihr
+                    Konto nutzen. Informieren Sie uns unverzüglich unter
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a>, wenn Sie
+                    eine unbefugte Nutzung vermuten. Sie sind für Aktivitäten über Ihr
+                    Konto verantwortlich, es sei denn, sie beruhen auf einem von uns zu
+                    vertretenden Umstand.
+                </p>
+            </section>
+
+            <section class="block" id="verhalten">
+                <h2>6. Verhaltensregeln</h2>
+                <p>Bei der Nutzung von Sundae dürfen Sie nicht:</p>
+                <ul>
+                    <li>Personen belästigen, bedrohen, verleumden, nachstellen, schikanieren
+                        oder beschimpfen oder Hass oder Diskriminierung fördern;</li>
+                    <li>sexuelle Inhalte an ein Match senden, das dies nicht eindeutig
+                        gewünscht hat, oder sexuelle Inhalte mit Bezug zu Minderjährigen;</li>
+                    <li>sich als eine andere Person ausgeben, fremde Fotos verwenden oder
+                        ein falsches oder irreführendes Profil erstellen;</li>
+                    <li>Inhalte veröffentlichen oder senden, die rechtswidrig, gewalttätig
+                        oder hasserfüllt sind oder Rechte anderer verletzen;</li>
+                    <li>um Geld oder Spenden bitten oder Produkte, Dienste, Veranstaltungen
+                        oder andere Plattformen bewerben; Sundae für Werbung, Anwerbung oder
+                        gewerbliche Zwecke nutzen;</li>
+                    <li>personenbezogene Daten anderer über das hinaus erfragen oder teilen,
+                        was ein Match Ihnen mitteilt, oder Fotos, Nachrichten oder
+                        Informationen einer anderen Person ohne deren Zustimmung außerhalb
+                        von Sundae veröffentlichen oder weitergeben;</li>
+                    <li>Bots, Scraper oder automatisierte Methoden einsetzen, das
+                        Ein-Match-pro-Woche-Prinzip umgehen, die App zurückentwickeln oder
+                        deren Sicherheit oder Betrieb beeinträchtigen;</li>
+                    <li>Sundae nutzen, wenn Sie verheiratet sind oder in einer Beziehung
+                        leben, in der Ihr:e Partner:in nicht einverstanden wäre, sofern
+                        dies ein Match täuschen würde.</li>
+                </ul>
+                <p>
+                    Sie können ein Match jederzeit <strong>blockieren</strong> und
+                    Verhalten, das gegen diese Regeln verstößt, aus dem Chat heraus
+                    <strong>melden</strong>. Eine Meldung beendet auch das Match und
+                    blockiert die Person.
+                </p>
+
+                <h3 id="anstoessig">Nulltoleranz für anstößige Inhalte und missbräuchliche Nutzer:innen</h3>
+
+                <div class="flag">
+                    <strong>Nulltoleranz-Richtlinie</strong>
+                    Sundae duldet <strong>keine</strong> anstößigen Inhalte und keine
+                    missbräuchlichen, belästigenden oder übergriffigen Nutzer:innen.
+                </div>
+
+                <p>
+                    <strong>Anstößige Inhalte und missbräuchliche Nutzung</strong>
+                    bezeichnen alles, was die vorstehende Aufzählung erfasst — insbesondere
+                    Belästigung, Hass, Drohungen, nicht einvernehmliche oder explizite
+                    sexuelle Inhalte, jede Sexualisierung Minderjähriger, gewaltverherrlichende
+                    oder selbstschädigende Inhalte, Betrug und Scams, Identitätstäuschung
+                    sowie das Teilen privater Informationen einer anderen Person. Die
+                    Aufzählung ist beispielhaft, nicht abschließend; ob etwas darunter
+                    fällt, entscheiden wir nach billigem Ermessen.
+                </p>
+                <p>
+                    Wir halten solche Inhalte und Nutzer:innen von Sundae fern durch klare
+                    Regeln, Melde- und Blockierfunktionen in jedem Gespräch, die manuelle
+                    Prüfung jeder Meldung und das Recht, Inhalte zu entfernen und Konten zu
+                    sperren oder dauerhaft auszuschließen — auch von uns aus. Unsere
+                    Reaktionszeiten stehen in Abschnitt&nbsp;10; die vollständige
+                    Richtlinie, einschließlich der von Apple für Apps mit
+                    nutzergenerierten Inhalten verlangten Bestimmungen, steht im
+                    <a href="eula-de.html">Endnutzer-Lizenzvertrag</a>.
+                </p>
+            </section>
+
+            <section class="block" id="inhalte">
+                <h2>7. Ihre Inhalte</h2>
+                <p>
+                    Sie behalten alle Rechte an den Fotos, Texten und sonstigen Inhalten,
+                    die Sie zu Sundae hinzufügen (<strong>„Ihre Inhalte“</strong>). Sie
+                    räumen uns ein einfaches, weltweites, unentgeltliches Recht ein, Ihre
+                    Inhalte zu hosten, zu speichern, zu vervielfältigen, anzupassen (z.&nbsp;B.
+                    zu verwischen, in der Größe zu ändern oder zu formatieren) und
+                    anzuzeigen, ausschließlich zum Betrieb und zur Bereitstellung des
+                    Dienstes — einschließlich der Anzeige Ihres Profils bei Ihrem Match.
+                    Dieses Recht endet, wenn Sie den Inhalt oder Ihr Konto löschen, mit
+                    Ausnahme von Kopien, die Ihr Match bereits erhalten hat (etwa
+                    Nachrichten), sowie Sicherungen oder Moderationsunterlagen, die wir
+                    gemäß der <a href="datenschutz.html">Datenschutzerklärung</a> aufbewahren
+                    dürfen.
+                </p>
+                <p>
+                    Sie sichern zu, dass Ihre Inhalte von Ihnen geteilt werden dürfen und
+                    keine Rechte Dritter verletzen. Wir dürfen Inhalte entfernen, die
+                    gegen diese Bedingungen verstoßen.
+                </p>
+            </section>
+
+            <section class="block" id="sicherheit">
+                <h2>8. Sicherheit und persönliche Treffen</h2>
+                <p>
+                    Wir können nicht jedes Mitglied überprüfen, keine Hintergrundprüfungen
+                    durchführen und keine Gespräche überwachen. Für Ihre Interaktionen
+                    sind Sie selbst verantwortlich.
+                </p>
+                <div class="callout">
+                    Wenn Sie sich mit einem Match persönlich treffen: Treffen Sie sich an
+                    einem öffentlichen Ort, sagen Sie einer vertrauten Person, wo Sie
+                    sind, organisieren Sie Ihre eigene Anreise und brechen Sie ab, wenn
+                    sich etwas falsch anfühlt. Senden Sie niemals Geld an jemanden, den
+                    Sie nicht getroffen haben.
+                </div>
+                <p>
+                    Soweit gesetzlich zulässig, sind wir nicht für das Verhalten von
+                    Mitgliedern verantwortlich, weder online noch offline. Diese
+                    Bedingungen beschränken keine Haftung, die gesetzlich nicht
+                    beschränkbar ist (siehe Abschnitt&nbsp;13).
+                </p>
+            </section>
+
+            <section class="block" id="plus">
+                <h2>9. Sundae+ Abonnement</h2>
+                <p>
+                    Sundae ist kostenlos nutzbar. <strong>Sundae+</strong> ist ein
+                    optionales kostenpflichtiges Abonnement, das zusätzliche, nicht das
+                    Matching betreffende Funktionen freischaltet — etwa das vollständige
+                    Profil eines Matches, tiefere persönliche Auswertungen,
+                    personalisierte Empfehlungen und einen Verlauf Ihrer vergangenen
+                    Matches. Es ändert nicht, mit wem Sie gematcht werden.
+                </p>
+                <ul>
+                    <li><strong>Preis:</strong> 2,99&nbsp;€ pro Monat (Preis für
+                        Deutschland; maßgeblich ist der in Ihrem App-Store angezeigte
+                        Betrag, der je nach Region und Store abweichen kann). Wir sind
+                        Kleinunternehmer nach §&nbsp;19 UStG und weisen keine Umsatzsteuer
+                        gesondert aus; eine etwaige App-Store-Verkaufssteuer wird von Apple
+                        oder Google als Marktplatz abgeführt.</li>
+                    <li><strong>Abrechnung:</strong> Käufe werden von Apple oder Google über
+                        Ihr Store-Konto und nach deren Bedingungen abgewickelt. Wir
+                        erhalten keine Zahlungsdaten.</li>
+                    <li><strong>Verlängerung:</strong> Das Abonnement verlängert sich
+                        automatisch um jeweils einen Monat, bis es gekündigt wird.</li>
+                    <li><strong>Kündigung:</strong> Jederzeit in den Apple- oder
+                        Google-Kontoeinstellungen kündbar, spätestens 24&nbsp;Stunden vor
+                        der nächsten Verlängerung. Der Zugang bleibt bis zum Ende des
+                        bezahlten Zeitraums bestehen. Eine Kündigung in den
+                        App-Einstellungen dokumentiert Ihre Absicht; das Abonnement selbst
+                        muss über den Store verwaltet werden.</li>
+                    <li><strong>Widerrufsrecht (Verbraucher:innen in der EU/im EWR):</strong>
+                        Ihnen steht ein gesetzliches 14-tägiges Widerrufsrecht für den Kauf
+                        digitaler Inhalte zu. Indem Sie Sundae+ sofort nutzen, verlangen
+                        Sie von uns den Beginn der Leistung innerhalb der Widerrufsfrist
+                        und nehmen zur Kenntnis, dass Ihr Widerrufsrecht erlischt, sobald
+                        die Leistung für den betreffenden Abrechnungszeitraum vollständig
+                        erbracht ist. Erstattungsanträge für Store-Käufe bearbeiten Apple
+                        oder Google.</li>
+                    <li>Wenn wir Sundae+-Funktionen wesentlich einschränken, informieren
+                        wir Abonnent:innen und bieten, soweit erforderlich, eine anteilige
+                        Erstattung oder Kündigung an.</li>
+                </ul>
+            </section>
+
+            <section class="block" id="moderation">
+                <h2>10. Moderation, Meldungen und Sperren</h2>
+                <p>
+                    Sie können ein Match über das Menü im Gespräch melden (dies blockiert
+                    zugleich die Person und beendet das Match) oder eine E-Mail an
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a> senden. Bei
+                    einer Meldung wird das betreffende Gespräch gesichert, damit es auch
+                    dann beurteilt werden kann, wenn ein Konto später gelöscht wird.
+                </p>
+                <p>
+                    <strong>Jede Meldung anstößiger Inhalte oder missbräuchlicher Nutzung
+                    prüfen wir innerhalb von 24&nbsp;Stunden</strong> und entfernen, sofern
+                    sie begründet ist, den Inhalt und/oder sperren das verantwortliche
+                    Konto vorübergehend oder dauerhaft. Meldungsbezogene und sonstige
+                    Support-E-Mails beantworten wir möglichst innerhalb von
+                    24&nbsp;Stunden, jedenfalls ohne schuldhaftes Zögern.
+                </p>
+                <p>
+                    Darüber hinaus können wir Meldungen prüfen und, soweit
+                    verhältnismäßig erforderlich, ein Konto einschränken, vorübergehend
+                    oder dauerhaft sperren, Inhalte entfernen oder ein Match beenden — etwa
+                    bei einem von uns angenommenen Verstoß gegen diese Bedingungen, bei
+                    einer Gefahr für andere Mitglieder oder wenn wir gesetzlich zum
+                    Handeln verpflichtet sind. Wir können auch von uns aus tätig werden.
+                    Soweit praktikabel und rechtlich zulässig, teilen wir Ihnen die
+                    Maßnahme und einen Grund mit; Sie können unter
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a>
+                    widersprechen. Ein gesperrtes Konto verliert den Zugriff auf Matches
+                    und Nachrichten. Die vollständige Inhaltsrichtlinie steht im
+                    <a href="eula-de.html#zero-tolerance">Endnutzer-Lizenzvertrag</a>.
+                </p>
+            </section>
+
+            <section class="block" id="beendigung">
+                <h2>11. Beendigung der Nutzung</h2>
+                <p>
+                    Sie können die Nutzung von Sundae jederzeit beenden und Ihr Konto über
+                    <strong>Einstellungen → Konto → Konto löschen</strong> löschen. Sie
+                    können das Matching auch pausieren, ohne etwas zu löschen. Wir können
+                    den Vertrag mit angemessener Frist oder aus wichtigem Grund (etwa bei
+                    einem schweren oder wiederholten Verstoß gegen diese Bedingungen)
+                    fristlos kündigen. Bestimmungen, die ihrer Natur nach fortgelten
+                    sollen (einschließlich der Regelungen zur Inhaltslizenz, zur Haftung
+                    und zum anwendbaren Recht), bleiben in Kraft.
+                </p>
+            </section>
+
+            <section class="block" id="verfuegbarkeit">
+                <h2>12. Verfügbarkeit und Änderungen</h2>
+                <p>
+                    Wir bemühen uns, Sundae verfügbar zu halten, versprechen aber keinen
+                    unterbrechungs- oder fehlerfreien Betrieb. Wir können Funktionen oder
+                    den gesamten Dienst aus betrieblichen, rechtlichen oder
+                    wirtschaftlichen Gründen ändern, aussetzen oder einstellen.
+                </p>
+                <p>
+                    Wir können diese Bedingungen bei Vorliegen eines triftigen Grundes
+                    ändern — etwa bei einer Änderung des Dienstes, der Technik oder der
+                    Rechtslage. Über wesentliche Änderungen informieren wir mindestens
+                    30&nbsp;Tage vor ihrem Wirksamwerden in der App oder per E-Mail. Sind
+                    Sie mit der Änderung nicht einverstanden, können Sie durch Löschen
+                    Ihres Kontos vor dem Wirksamwerden kündigen; eine fortgesetzte Nutzung
+                    nach diesem Zeitpunkt gilt als Zustimmung zu den geänderten
+                    Bedingungen.
+                </p>
+            </section>
+
+            <section class="block" id="haftung">
+                <h2>13. Haftung</h2>
+                <p>
+                    Wir haften unbeschränkt für Schäden aus Vorsatz oder grober
+                    Fahrlässigkeit, für Schäden aus der Verletzung des Lebens, des Körpers
+                    oder der Gesundheit, nach dem Produkthaftungsgesetz sowie im Umfang
+                    einer von uns übernommenen Garantie.
+                </p>
+                <p>
+                    Bei einfacher Fahrlässigkeit haften wir nur bei Verletzung einer
+                    wesentlichen Vertragspflicht (einer Pflicht, deren Erfüllung die
+                    ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und
+                    auf deren Einhaltung Sie regelmäßig vertrauen dürfen). In diesem Fall
+                    ist unsere Haftung auf den vertragstypischen, vorhersehbaren Schaden
+                    begrenzt.
+                </p>
+                <p>
+                    Eine weitergehende Haftung ist ausgeschlossen. Eine Änderung der
+                    Beweislast zu Ihrem Nachteil ist damit nicht verbunden. Die
+                    vorstehenden Haftungsbeschränkungen gelten auch für die persönliche
+                    Haftung unserer Mitarbeitenden, Vertreter:innen und
+                    Erfüllungsgehilf:innen.
+                </p>
+                <p>
+                    Insbesondere haften wir im Rahmen der vorstehenden Grenzen nicht für
+                    die Richtigkeit von Mitgliederangaben, dafür, ob Sie ein Match
+                    erhalten oder mit ihm in Kontakt kommen, oder für das Verhalten
+                    anderer Mitglieder.
+                </p>
+            </section>
+
+            <section class="block" id="schutzrechte">
+                <h2>14. Unsere Schutzrechte</h2>
+                <p>
+                    Der Name „Sundae“, das Logo, die App, die Website, das Design und die
+                    zugrunde liegende Software sind geschützt und bleiben unser Eigentum
+                    oder das unserer Lizenzgeber. Wir räumen Ihnen ein beschränktes,
+                    persönliches, nicht übertragbares und widerrufliches Recht ein, die
+                    App für die Dauer Ihres Kontos bestimmungsgemäß zu nutzen. Weitere
+                    Rechte werden nicht eingeräumt.
+                </p>
+            </section>
+
+            <section class="block" id="recht">
+                <h2>15. Anwendbares Recht und Streitigkeiten</h2>
+                <p>
+                    Für diese Bedingungen und Streitigkeiten aus ihnen gilt das Recht der
+                    <strong>Bundesrepublik Deutschland</strong> unter Ausschluss seiner
+                    Kollisionsnormen und des UN-Kaufrechts. Sind Sie Verbraucher:in,
+                    entzieht Ihnen diese Rechtswahl nicht den Schutz zwingender
+                    Bestimmungen des Rechts Ihres gewöhnlichen Aufenthaltsstaats.
+                </p>
+                <p>
+                    Diese Bedingungen werden auf Deutsch und auf Englisch
+                    (<a href="terms.html">Terms of Use</a>) veröffentlicht.
+                    <strong>Maßgeblich ist die deutsche Fassung</strong>; die englische
+                    Fassung ist eine Übersetzung zur Information.
+                </p>
+                <p>
+                    Die Europäische Kommission stellt eine Plattform zur
+                    Online-Streitbeilegung bereit:
+                    <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.
+                    Wir sind nicht verpflichtet und nicht bereit, an einem
+                    Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+                    teilzunehmen.
+                </p>
+            </section>
+
+            <section class="block" id="schluss">
+                <h2>16. Schlussbestimmungen</h2>
+                <p>
+                    Sollte eine Bestimmung dieser Bedingungen unwirksam sein oder werden,
+                    bleiben die übrigen Bestimmungen wirksam. Sie dürfen Ihre Rechte aus
+                    diesen Bedingungen nicht ohne unsere Zustimmung abtreten; wir dürfen
+                    den Vertrag auf eine Person übertragen, die den Betrieb von Sundae
+                    übernimmt, ohne dass Ihre Rechte geschmälert werden. Diese Bedingungen
+                    und die Datenschutzerklärung bilden die gesamte Vereinbarung zwischen
+                    Ihnen und uns über Sundae.
+                </p>
+            </section>
+
+            <section class="block" id="dokumente">
+                <h2>17. Ergänzende Dokumente und Impressum</h2>
+                <p>Diese Bedingungen sind zusammen mit folgenden Dokumenten zu lesen:</p>
+                <ul>
+                    <li><a href="datenschutz.html">Datenschutzerklärung</a> — welche Daten
+                        wir verarbeiten und warum.</li>
+                    <li><a href="eula-de.html">Endnutzer-Lizenzvertrag</a> — Ihre Lizenz an
+                        der App und die vollständige Richtlinie zu anstößigen Inhalten und
+                        missbräuchlichen Nutzer:innen (von Apple und Google für Apps mit
+                        nutzergenerierten Inhalten verlangt).</li>
+                    <li><a href="impressum.html">Impressum</a> — Anbieterkennzeichnung
+                        gemäß §&nbsp;5 DDG.</li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <span>© <span id="year">2026</span> Sundae</span>
+            <span class="links">
+                <a href="index.html">Startseite</a>
+                <a href="datenschutz.html">Datenschutzerklärung</a>
+                <a href="eula-de.html">EULA</a>
+                <a href="impressum.html">Impressum</a>
+            </span>
+        </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

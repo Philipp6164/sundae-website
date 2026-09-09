@@ -58,6 +58,13 @@
         .logo { font-size: 22px; font-weight: 600; letter-spacing: -1px; color: var(--ink); }
         .back { font-size: 14px; color: var(--muted-2); }
         .back:hover { color: var(--ink); }
+        .navright { display: flex; align-items: center; gap: 16px; }
+        .langswitch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: 12px; font-weight: 600; }
+        .langswitch a { padding: 5px 10px; color: var(--muted-2); text-decoration: none; }
+        .langswitch a.on { background: var(--ink); color: #fff; }
+        @media (max-width: 520px) {
+            body > nav .wrap { height: auto; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; gap: 10px; }
+        }
 
         /* HEADER */
         header.doc {
@@ -198,7 +205,13 @@
     <nav>
         <div class="wrap">
             <a href="index.html" class="logo">sundae</a>
-            <a href="index.html" class="back">← Back to site</a>
+            <span class="navright">
+                <span class="langswitch">
+                    <a class="on" href="privacy.html">EN</a>
+                    <a href="datenschutz.html">DE</a>
+                </span>
+                <a href="index.html" class="back">← Back to site</a>
+            </span>
         </div>
     </nav>
 
@@ -275,6 +288,12 @@
                     visit this website. It does not cover third-party services that we
                     link to but do not operate (for example the Apple App Store or Google
                     Play), which have their own privacy policies.
+                </p>
+                <p>
+                    This is the English version, provided for convenience. A German
+                    version is available at
+                    <a href="datenschutz.html">Datenschutzerklärung</a>; for users
+                    resident in Germany, the German version is the authoritative text.
                 </p>
             </section>
 

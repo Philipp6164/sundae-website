@@ -54,6 +54,13 @@
         .logo { font-size: 22px; font-weight: 600; letter-spacing: -1px; color: var(--ink); }
         .back { font-size: 14px; color: var(--muted-2); }
         .back:hover { color: var(--ink); }
+        .navright { display: flex; align-items: center; gap: 16px; }
+        .langswitch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: 12px; font-weight: 600; }
+        .langswitch a { padding: 5px 10px; color: var(--muted-2); text-decoration: none; }
+        .langswitch a.on { background: var(--ink); color: #fff; }
+        @media (max-width: 520px) {
+            body > nav .wrap { height: auto; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; gap: 10px; }
+        }
 
         header.doc {
             padding: clamp(56px, 9vw, 100px) 0 40px;
@@ -164,7 +171,13 @@
     <nav>
         <div class="wrap">
             <a href="index.html" class="logo">sundae</a>
-            <a href="index.html" class="back">← Back to site</a>
+            <span class="navright">
+                <span class="langswitch">
+                    <a class="on" href="terms.html">EN</a>
+                    <a href="nutzungsbedingungen.html">DE</a>
+                </span>
+                <a href="index.html" class="back">← Back to site</a>
+            </span>
         </div>
     </nav>
 
@@ -554,6 +567,13 @@
                     International Sale of Goods. If you are a consumer, this choice of law
                     does not deprive you of the protection of mandatory provisions of the
                     law of your country of habitual residence.
+                </p>
+                <p>
+                    These terms are published in German
+                    (<a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>) and
+                    English. This English version is a translation for convenience; for
+                    consumers with their habitual residence in Germany, the
+                    <strong>German version is authoritative</strong>.
                 </p>
                 <p>
                     The European Commission provides an online dispute resolution

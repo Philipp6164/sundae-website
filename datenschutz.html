@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung — Sundae</title>
+    <meta name="description" content="Wie Sundae personenbezogene Daten erhebt, verwendet und schützt.">
+    <meta name="theme-color" content="#F7F5F2">
+    <meta name="robots" content="index, follow">
+
+    <style>
+        :root {
+            --bg: #F7F5F2;
+            --ink: #171717;
+            --ink-soft: #292724;
+            --muted: #55514C;
+            --muted-2: #77736D;
+            --faint: #99958F;
+            --line: #E4E0DA;
+            --line-strong: #D8D4CE;
+            --card: #ECE9E4;
+            --white: #FFFFFF;
+            --dark: #171717;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink-soft);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a { color: inherit; }
+
+        img { max-width: 100%; display: block; }
+
+        .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+        body > nav {
+            border-bottom: 1px solid var(--line);
+            background: var(--bg);
+        }
+        body > nav .wrap {
+            max-width: 1180px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo { font-size: 22px; font-weight: 600; letter-spacing: -1px; color: var(--ink); }
+        .back { font-size: 14px; color: var(--muted-2); }
+        .back:hover { color: var(--ink); }
+        .navright { display: flex; align-items: center; gap: 16px; }
+        .langswitch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: 12px; font-weight: 600; }
+        .langswitch a { padding: 5px 10px; color: var(--muted-2); text-decoration: none; }
+        .langswitch a.on { background: var(--ink); color: #fff; }
+        @media (max-width: 520px) {
+            body > nav .wrap { height: auto; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; gap: 10px; }
+        }
+
+        header.doc {
+            padding: clamp(56px, 9vw, 100px) 0 40px;
+            border-bottom: 1px solid var(--line);
+        }
+        header.doc .eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            color: var(--faint);
+        }
+        header.doc h1 {
+            margin-top: 18px;
+            font-size: clamp(34px, 6vw, 56px);
+            line-height: 1.04;
+            letter-spacing: -0.04em;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        header.doc .meta {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--muted-2);
+        }
+
+        main { padding: 48px 0 96px; }
+
+        .toc {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 24px 26px;
+            margin-bottom: 56px;
+        }
+        .toc h2 {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--faint);
+            margin-bottom: 14px;
+        }
+        .toc ol { margin: 0; padding-left: 20px; display: grid; gap: 7px; }
+        .toc li { font-size: 14px; }
+        .toc a { color: var(--muted); text-decoration: none; }
+        .toc a:hover { color: var(--ink); text-decoration: underline; }
+
+        section.block { margin-bottom: 48px; scroll-margin-top: 24px; }
+
+        section.block h2 {
+            font-size: clamp(21px, 3.2vw, 27px);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+
+        section.block h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ink-soft);
+            margin: 24px 0 8px;
+        }
+
+        section.block p { margin-bottom: 14px; color: var(--muted); }
+
+        section.block ul { margin: 0 0 14px; padding-left: 22px; color: var(--muted); }
+        section.block li { margin-bottom: 7px; }
+
+        section.block a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+
+        strong { color: var(--ink-soft); font-weight: 600; }
+
+        .callout {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 20px 22px;
+            margin: 20px 0;
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        table.data {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0 18px;
+            font-size: 14px;
+        }
+        table.data th, table.data td {
+            text-align: left;
+            vertical-align: top;
+            padding: 12px 12px;
+            border-bottom: 1px solid var(--line-strong);
+            color: var(--muted);
+        }
+        table.data th { color: var(--ink-soft); font-weight: 600; width: 34%; }
+        .table-scroll { overflow-x: auto; }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 40px 0;
+            font-size: 13px;
+            color: var(--faint);
+        }
+        footer .wrap {
+            max-width: 1180px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        footer a { color: var(--muted-2); text-decoration: none; }
+        footer a:hover { color: var(--ink); }
+        footer .links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+        @media (max-width: 600px) {
+            table.data th { width: auto; }
+            table.data, table.data tbody, table.data tr, table.data th, table.data td { display: block; }
+            table.data th { border-bottom: none; padding-bottom: 2px; }
+            table.data td { padding-top: 2px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="wrap">
+            <a href="index.html" class="logo">sundae</a>
+            <span class="navright">
+                <span class="langswitch">
+                    <a href="privacy.html">EN</a>
+                    <a class="on" href="datenschutz.html">DE</a>
+                </span>
+                <a href="index.html" class="back">← Zur Website</a>
+            </span>
+        </div>
+    </nav>
+
+    <header class="doc">
+        <div class="wrap">
+            <span class="eyebrow">Rechtliches</span>
+            <h1>Datenschutzerklärung</h1>
+            <p class="meta">
+                Stand: 9.&nbsp;September&nbsp;2026 · Gilt für die Sundae-App und diese
+                Website (sundae.pro).
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <div class="callout">
+                <strong>Kurzfassung.</strong> Sundae ist eine Dating-App. Um Ihnen
+                einmal pro Woche eine Person vorzuschlagen, verarbeiten wir Ihr Profil,
+                einen Persönlichkeitstest, Ihren ungefähren Standort und Ihr Feedback.
+                Wir verkaufen Ihre Daten nicht, setzen keine Werbe-Tracker ein, und Sie
+                können in der App jederzeit alles löschen. Die Einzelheiten stehen
+                unten.
+            </div>
+
+            <nav class="toc" aria-label="Inhalt">
+                <h2>Inhalt</h2>
+                <ol>
+                    <li><a href="#verantwortlicher">Verantwortlicher</a></li>
+                    <li><a href="#geltung">Geltungsbereich</a></li>
+                    <li><a href="#daten">Welche Daten wir verarbeiten</a></li>
+                    <li><a href="#zwecke">Zwecke und Rechtsgrundlagen</a></li>
+                    <li><a href="#besondere">Besondere Datenkategorien und Einwilligung</a></li>
+                    <li><a href="#empfaenger">Empfänger der Daten</a></li>
+                    <li><a href="#drittland">Datenübermittlung in Drittländer</a></li>
+                    <li><a href="#speicherdauer">Speicherdauer</a></li>
+                    <li><a href="#matching">Wie das Matching funktioniert</a></li>
+                    <li><a href="#rechte">Ihre Rechte</a></li>
+                    <li><a href="#loeschen">Konto löschen</a></li>
+                    <li><a href="#sicherheit">Sicherheit</a></li>
+                    <li><a href="#alter">Altersgrenze</a></li>
+                    <li><a href="#website">Diese Website</a></li>
+                    <li><a href="#aenderungen">Änderungen dieser Erklärung</a></li>
+                    <li><a href="#kontakt">Kontakt und Beschwerderecht</a></li>
+                </ol>
+            </nav>
+
+            <section class="block" id="verantwortlicher">
+                <h2>1. Verantwortlicher</h2>
+                <p>
+                    Verantwortlicher für die Verarbeitung Ihrer personenbezogenen Daten
+                    im Sinne der Datenschutz-Grundverordnung (DSGVO) und des
+                    Bundesdatenschutzgesetzes (BDSG) ist:
+                </p>
+                <p>
+                    Philipp Ludwig Syring (Einzelunternehmer)<br>
+                    Lange-Geismar-Str. 62, 37073 Göttingen, Deutschland<br>
+                    E-Mail: <a href="mailto:support@sundae.pro">support@sundae.pro</a><br>
+                    Vollständige Anbieterkennzeichnung: <a href="impressum.html">Impressum</a>.
+                </p>
+                <p>
+                    Sundae wird von einer Einzelperson betrieben. Wir sind nicht
+                    verpflichtet, eine:n Datenschutzbeauftragte:n zu benennen, und haben
+                    dies nicht getan. Für Datenschutzanliegen nutzen Sie bitte die
+                    vorstehende Kontaktadresse; wir antworten in der Regel innerhalb von
+                    24&nbsp;Stunden.
+                </p>
+            </section>
+
+            <section class="block" id="geltung">
+                <h2>2. Geltungsbereich</h2>
+                <p>
+                    Diese Erklärung beschreibt den Umgang mit personenbezogenen Daten bei
+                    der Nutzung der Sundae-App (die <strong>„App“</strong>) und beim
+                    Besuch dieser Website. Sie gilt nicht für Dienste Dritter, die wir
+                    verlinken, aber nicht betreiben (z.&nbsp;B. Apple App Store oder
+                    Google Play); dafür gelten deren eigene Datenschutzhinweise.
+                </p>
+                <p>
+                    Maßgeblich ist diese deutsche Fassung. Eine englische Fassung finden
+                    Sie unter <a href="privacy.html">Privacy Policy</a>; sie dient nur der
+                    Information.
+                </p>
+            </section>
+
+            <section class="block" id="daten">
+                <h2>3. Welche Daten wir verarbeiten</h2>
+                <p>
+                    Wir erheben nur, was für den Betrieb eines Dating-Dienstes mit einem
+                    Match pro Woche erforderlich ist. Je nach Nutzung sind das:
+                </p>
+
+                <div class="table-scroll">
+                <table class="data">
+                    <tr>
+                        <th>Konto</th>
+                        <td>E-Mail-Adresse und ein sicher gehashtes Passwort (über unseren
+                            Authentifizierungsdienstleister), Erstellungsdatum des Kontos,
+                            Spracheinstellung und ob Sie die Bedingungen akzeptiert haben.</td>
+                    </tr>
+                    <tr>
+                        <th>Altersnachweis</th>
+                        <td>Ihr bei der Registrierung angegebenes Geburtsdatum und das
+                            daraus abgeleitete Alter in vollen Jahren. Dient der
+                            Bestätigung, dass Sie mindestens 18&nbsp;Jahre alt sind, und
+                            dem Matching nach Altersspanne.</td>
+                    </tr>
+                    <tr>
+                        <th>Profil</th>
+                        <td>Vorname, Geschlecht, wen Sie kennenlernen möchten, ein
+                            Profilfoto sowie — sofern Sie diese angeben — weitere Fotos,
+                            eine kurze Beschreibung, Antworten auf Prompts, Körpergröße,
+                            Interessen, Beziehungsabsicht, Beziehungsform und ob Sie
+                            Kinder haben bzw. möchten.</td>
+                    </tr>
+                    <tr>
+                        <th>Persönlichkeitstest</th>
+                        <td>Ihre Antworten im einmaligen Persönlichkeitsfragebogen und das
+                            daraus berechnete Persönlichkeitsprofil (eine Reihe von
+                            Dimensionswerten). Wird für das Matching und Ihre persönlichen
+                            Auswertungen verwendet. Während eines Matches können Ihrem
+                            Match Ihre Dimensionswerte — nicht Ihre einzelnen Antworten —
+                            als Kompatibilitätshinweis angezeigt werden.</td>
+                    </tr>
+                    <tr>
+                        <th>Standort</th>
+                        <td>Mit Ihrer Erlaubnis Ihre ungefähren Koordinaten und die daraus
+                            abgeleitete Stadt sowie Ihr gewählter Suchradius. Dient dem
+                            Matching mit Personen in der Nähe. Sie können die App auch
+                            ohne genauen Standort nutzen, indem Sie eine Stadt eingeben.</td>
+                    </tr>
+                    <tr>
+                        <th>Matches &amp; Nachrichten</th>
+                        <td>Angaben dazu, mit wem und wann Sie gematcht wurden, der
+                            Kompatibilitätswert, der Match-Status und die Nachrichten, die
+                            Sie mit einem Match austauschen. Vergangene Matches werden
+                            aufbewahrt und Ihnen in einem Match-Verlauf in der App
+                            angezeigt. Wenn Sie Benachrichtigungen aktivieren, kann eine
+                            kurze Vorschau einer neuen Nachricht auf Ihrem Sperrbildschirm
+                            erscheinen.</td>
+                    </tr>
+                    <tr>
+                        <th>Feedback &amp; Eigenschaften</th>
+                        <td>Ihre Angaben nach dem Ende eines Matches (wie es lief,
+                            ausgewählte Eigenschaften, ob Sie sich wiedertreffen würden,
+                            was danach passierte) sowie die aggregierten „Eigenschaften,
+                            die anderen auffallen“, die auf Ihrem Profil und Ihren Matches
+                            angezeigt werden.</td>
+                    </tr>
+                    <tr>
+                        <th>Match-Qualitätssignal</th>
+                        <td>Ein interner Wert, den wir daraus ableiten, wie Ihre bisherigen
+                            Matches verliefen — dem Feedback Ihrer Partner:innen zum
+                            Match-Ende (insbesondere, ob sie sich wiedertreffen würden) und
+                            Nutzungssignalen wie Nachrichtenanzahl und Art des
+                            Match-Endes. Er dient der Feinsteuerung künftiger Matches und
+                            ggf. der Entscheidung über ein Match unter der Woche. Er wird
+                            anderen Nutzer:innen nie angezeigt.</td>
+                    </tr>
+                    <tr>
+                        <th>Sicherheit &amp; Moderation</th>
+                        <td>Von Ihnen erstellte Blockierungen sowie Meldungen, die Sie
+                            abgeben oder die über Sie abgegeben werden, einschließlich
+                            Grund und betroffenem Match. Wir bewahren dies auf, um den
+                            Dienst sicher zu betreiben und Missbrauch zu bearbeiten.</td>
+                    </tr>
+                    <tr>
+                        <th>Abonnement</th>
+                        <td>Ob Sundae+ für Ihr Konto aktiv ist und wann es begonnen hat.
+                            Die Zahlung selbst wickeln Apple oder Google ab — wir erhalten
+                            keine Zahlungsdaten.</td>
+                    </tr>
+                    <tr>
+                        <th>Gerät &amp; Benachrichtigungen</th>
+                        <td>Wenn Sie Push-Benachrichtigungen aktivieren, ein Push-Token für
+                            Ihr Gerät und Ihre Benachrichtigungseinstellung. Grundlegende
+                            technische Daten (App-Version, Plattform) können in
+                            Fehlerprotokollen enthalten sein.</td>
+                    </tr>
+                    <tr>
+                        <th>Support</th>
+                        <td>Der Inhalt der E-Mails, die Sie uns senden, und unserer
+                            Antworten.</td>
+                    </tr>
+                    <tr>
+                        <th>Website</th>
+                        <td>Server-Logs unseres Hosting-Anbieters (siehe Abschnitt 14)
+                            sowie die E-Mail-Adresse, die Sie in das Warteliste-Formular
+                            eingeben und die Ihre eigene E-Mail-App an uns sendet.</td>
+                    </tr>
+                </table>
+                </div>
+
+                <p>
+                    Wir verwenden <strong>keine</strong> Werbe-SDKs, kein
+                    app-übergreifendes Tracking und keine Analyse-Dienste Dritter, die ein
+                    Profil über Sie bilden.
+                </p>
+            </section>
+
+            <section class="block" id="zwecke">
+                <h2>4. Zwecke und Rechtsgrundlagen</h2>
+                <div class="table-scroll">
+                <table class="data">
+                    <tr>
+                        <th>Bereitstellung des Dienstes — Kontoerstellung, Aufbau Ihres
+                            Profils, Erzeugung und Zustellung eines Matches pro Woche,
+                            Chat, wöchentlicher Zyklus</th>
+                        <td>Erfüllung eines Vertrags mit Ihnen — Art.&nbsp;6 Abs.&nbsp;1
+                            lit.&nbsp;b DSGVO</td>
+                    </tr>
+                    <tr>
+                        <th>Persönlichkeitstest, Feedback und Auswertungen zur Verbesserung
+                            künftiger Matches</th>
+                        <td>Vertragserfüllung — Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO;
+                            für die sensiblen Aspekte Ihre ausdrückliche Einwilligung —
+                            Art.&nbsp;9 Abs.&nbsp;2 lit.&nbsp;a DSGVO</td>
+                    </tr>
+                    <tr>
+                        <th>Ableitung und Nutzung des internen Match-Qualitätssignals,
+                            damit das Matching für alle gut funktioniert</th>
+                        <td>Vertragserfüllung — Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO;
+                            unser berechtigtes Interesse an einem funktionierenden, fairen
+                            Matching — Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO</td>
+                    </tr>
+                    <tr>
+                        <th>Genauer Standort und Push-Benachrichtigungen</th>
+                        <td>Ihre Einwilligung über die Berechtigungsabfrage des
+                            Betriebssystems — Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO.
+                            Sie können sie jederzeit in den Geräteeinstellungen
+                            widerrufen.</td>
+                    </tr>
+                    <tr>
+                        <th>Optionale Profilfelder (Beschreibung, weitere Fotos, Prompts,
+                            Körpergröße, Kinder, Beziehungsform, Interessen)</th>
+                        <td>Ihre Einwilligung durch die Angabe —
+                            Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a und, soweit sensibel,
+                            Art.&nbsp;9 Abs.&nbsp;2 lit.&nbsp;a DSGVO</td>
+                    </tr>
+                    <tr>
+                        <th>Sicherheit, Moderation, Verhinderung und Aufklärung von
+                            Missbrauch, Absicherung des Dienstes</th>
+                        <td>Unsere berechtigten Interessen und die anderer Nutzer:innen an
+                            einem sicheren Dienst — Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f
+                            DSGVO; sowie Erfüllung rechtlicher Pflichten —
+                            Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;c DSGVO</td>
+                    </tr>
+                    <tr>
+                        <th>Bearbeitung von Support-Anfragen</th>
+                        <td>Vertragserfüllung und unser berechtigtes Interesse, Nutzer:innen
+                            zu helfen — Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b und f DSGVO</td>
+                    </tr>
+                    <tr>
+                        <th>Erfüllung rechtlicher Anfragen und Verteidigung von
+                            Rechtsansprüchen</th>
+                        <td>Rechtliche Pflicht — Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;c DSGVO;
+                            berechtigte Interessen — Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f
+                            DSGVO</td>
+                    </tr>
+                    <tr>
+                        <th>Betrieb dieser Website und der Warteliste</th>
+                        <td>Unser berechtigtes Interesse an der Darstellung und dem Angebot
+                            des Dienstes — Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO; für
+                            die Warteliste-E-Mail Ihre Einwilligung durch das Absenden —
+                            Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO</td>
+                    </tr>
+                </table>
+                </div>
+            </section>
+
+            <section class="block" id="besondere">
+                <h2>5. Besondere Datenkategorien und Einwilligung</h2>
+                <p>
+                    Ein Dating-Profil kann naturgemäß Informationen offenbaren, die die
+                    DSGVO als <strong>besondere Kategorie</strong> (Art.&nbsp;9) behandelt
+                    — insbesondere Daten zum Sexualleben oder zur sexuellen Orientierung,
+                    die sich aus dem angegebenen gewünschten Geschlecht ableiten lassen,
+                    sowie Angaben etwa zu Gesundheit oder Religion, die Sie in Ihrer
+                    Beschreibung oder in Prompts machen.
+                </p>
+                <p>
+                    Wir verarbeiten diese Daten ausschließlich, um den von Ihnen
+                    gebuchten Matching-Dienst zu erbringen, auf Grundlage Ihrer
+                    <strong>ausdrücklichen Einwilligung</strong> nach Art.&nbsp;9
+                    Abs.&nbsp;2 lit.&nbsp;a DSGVO. Sie erteilen diese Einwilligung, wenn
+                    Sie Ihr Profil erstellen und Sundae betreten. Sie können sie jederzeit
+                    widerrufen, indem Sie die betreffenden Felder ändern oder entfernen
+                    oder Ihr Konto löschen; die Rechtmäßigkeit der bis zum Widerruf
+                    erfolgten Verarbeitung bleibt unberührt.
+                </p>
+                <div class="callout">
+                    Bitte geben Sie in Freitextfeldern (Beschreibung, Prompts,
+                    Nachrichten) nur Informationen ein, die Sie mit einem Match teilen
+                    möchten.
+                </div>
+            </section>
+
+            <section class="block" id="empfaenger">
+                <h2>6. Empfänger der Daten</h2>
+
+                <h3>Andere Nutzer:innen</h3>
+                <p>
+                    Wenn Sie gematcht sind, sieht Ihr Match Ihr Profil: Vorname, Alter,
+                    Foto (bis zur Enthüllung unscharf), Stadt bzw. ungefähre Entfernung,
+                    Prompts, Interessen, die von anderen genannten Eigenschaften sowie
+                    Ihre Persönlichkeits-Dimensionswerte als Kompatibilitätshinweis. Mit
+                    Sundae+ sieht ein Match zusätzlich die von Ihnen ergänzten optionalen
+                    Angaben und später, dass Sie ein früheres Match waren. Ihre
+                    E-Mail-Adresse, Ihr Geburtsdatum, Ihre genauen Koordinaten, Ihre
+                    einzelnen Persönlichkeitsantworten, Ihr Feedback über andere und das
+                    interne Qualitätssignal werden anderen Nutzer:innen nie angezeigt.
+                </p>
+
+                <h3>Auftragsverarbeiter</h3>
+                <p>
+                    Wir setzen eine kleine Zahl von Dienstleistern ein, die in unserem
+                    Auftrag und auf Grundlage von Auftragsverarbeitungsverträgen Daten
+                    verarbeiten:
+                </p>
+                <ul>
+                    <li><strong>Supabase</strong> (Supabase, Inc.) — Datenbank,
+                        Authentifizierung, Dateispeicher (Ihre Fotos), Echtzeit-Nachrichten
+                        und Versand von Konto-E-Mails wie Bestätigungs- und
+                        Passwort-zurücksetzen-Mails. Hier werden Ihre Sundae-Daten
+                        gespeichert. Siehe
+                        <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>.</li>
+                    <li><strong>Expo</strong> (Expo Application Services) — Zustellung von
+                        Push-Benachrichtigungen über ein Geräte-Push-Token, sofern Sie
+                        diese aktivieren. Siehe
+                        <a href="https://expo.dev/privacy" target="_blank" rel="noopener">expo.dev/privacy</a>.</li>
+                    <li><strong>GitHub Pages</strong> (GitHub, Inc.) — Hosting dieser
+                        Website (sundae.pro). GitHub führt übliche Server-Logs. Siehe
+                        <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub-Datenschutzerklärung</a>.</li>
+                </ul>
+                <p>
+                    Meldungen prüfen wir über ein privates Admin-Werkzeug, das sich direkt
+                    mit der Supabase-Datenbank verbindet; Meldedaten werden an keinen
+                    weiteren Drittdienst übermittelt.
+                </p>
+
+                <h3>App-Stores und Zahlungen</h3>
+                <p>
+                    Wenn Sie Sundae+ abonnieren, wickeln <strong>Apple</strong> oder
+                    <strong>Google</strong> den Kauf nach ihren eigenen Bedingungen und
+                    Datenschutzhinweisen ab. Sie teilen uns mit, dass ein Abonnement aktiv
+                    ist; Zahlungsdaten geben sie nicht an uns weiter.
+                </p>
+
+                <h3>Rechtliche Gründe</h3>
+                <p>
+                    Wir geben Daten weiter, wenn wir dazu rechtlich verpflichtet sind oder
+                    dies erforderlich ist, um unsere Bedingungen durchzusetzen, die
+                    Sicherheit von Nutzer:innen zu schützen oder Rechtsansprüche geltend
+                    zu machen, auszuüben oder zu verteidigen.
+                </p>
+
+                <p>
+                    Wir verkaufen Ihre personenbezogenen Daten nicht und geben sie nicht
+                    zu Werbezwecken weiter.
+                </p>
+            </section>
+
+            <section class="block" id="drittland">
+                <h2>7. Datenübermittlung in Drittländer</h2>
+                <p>
+                    Ihre Kern-Sundae-Daten — Profil, Nachrichten, Fotos, Persönlichkeits-
+                    daten und alles Weitere, was bei Supabase gespeichert wird — liegen in
+                    der Region <strong>EU (Westeuropa, Irland)</strong> und damit
+                    innerhalb des Europäischen Wirtschaftsraums.
+                </p>
+                <p>
+                    Ein Teil der Verarbeitung findet dennoch außerhalb des EWR statt, u.
+                    a. in den USA: <strong>GitHub</strong> (Website-Hosting und
+                    Server-Logs), <strong>Expo</strong> (Zustellung von
+                    Push-Benachrichtigungen) sowie ein etwaiger Zugriff auf die
+                    Supabase-Plattform durch Supabase, Inc. von außerhalb des EWR zu
+                    Support- oder Betriebszwecken. Soweit dies geschieht, ist die
+                    Übermittlung durch einen Angemessenheitsbeschluss der Europäischen
+                    Kommission (etwa das EU-US Data Privacy Framework) oder durch
+                    <strong>Standardvertragsklauseln</strong> nebst zusätzlichen
+                    Schutzmaßnahmen abgesichert. Eine Kopie der jeweiligen
+                    Garantien können Sie über die Kontaktdaten in Abschnitt&nbsp;16
+                    anfordern.
+                </p>
+            </section>
+
+            <section class="block" id="speicherdauer">
+                <h2>8. Speicherdauer</h2>
+                <ul>
+                    <li><strong>Konto-, Altersnachweis- und Profildaten,
+                        Persönlichkeitsdaten, Präferenzen, Fotos und Ihr eigenes
+                        Match-Feedback</strong> — solange Ihr Konto besteht; bei Löschung
+                        des Kontos endgültig gelöscht (siehe Abschnitt&nbsp;11).</li>
+                    <li><strong>Matches und Nachrichten</strong> — solange Ihr Konto aktiv
+                        ist, damit der Dienst, Ihr Match-Verlauf und Ihre Auswertungen
+                        funktionieren. Bei Löschung Ihres Kontos bleiben die
+                        Match-Datensätze erhalten, Ihr Profil wird jedoch zu einem
+                        anonymen Platzhalter („Gelöschte:r Nutzer:in“), und die bereits
+                        von Ihnen gesendeten Nachrichten bleiben für die Empfänger:innen
+                        sichtbar, diesem Platzhalter zugeordnet.</li>
+                    <li><strong>Moderationsdaten</strong> — eine Meldung und der damit
+                        angefertigte Gesprächs-Snapshot werden so lange aufbewahrt, wie es
+                        zur Bearbeitung der Meldung, eines Widerspruchs, zur Erkennung
+                        wiederholten Missbrauchs oder zur Verteidigung von Rechtsansprüchen
+                        erforderlich ist. Wird ein Konto gesperrt, werden dessen Daten zur
+                        Bearbeitung von Widersprüchen und zur Erkennung von
+                        Sperr-Umgehungen aufbewahrt und anschließend anonymisiert, in der
+                        Regel innerhalb von <strong>90&nbsp;Tagen</strong> nach der Sperre.</li>
+                    <li><strong>Support-E-Mails</strong> — bis zu 24&nbsp;Monate nach
+                        Abschluss der Anfrage.</li>
+                    <li><strong>Server-Logs der Website</strong> — von GitHub für einen
+                        kurzen Zeitraum (typischerweise einige Wochen) zu Sicherheits- und
+                        Fehlerbehebungszwecken.</li>
+                    <li>Soweit gesetzliche Aufbewahrungsfristen bestehen (z.&nbsp;B. nach
+                        Steuer- oder Handelsrecht), bewahren wir die betreffenden
+                        Unterlagen so lange auf, wie das Gesetz es verlangt, und
+                        beschränken die Verarbeitung in der Zwischenzeit.</li>
+                </ul>
+            </section>
+
+            <section class="block" id="matching">
+                <h2>9. Wie das Matching funktioniert</h2>
+                <p>
+                    Einmal pro wöchentlichem Zyklus wählt Sundae eine:n Kandidat:in für
+                    Sie aus. Die Hauptvorstellung erfolgt sonntags; wurden Sie nicht
+                    gematcht, kann Sundae unter der Woche einen weiteren Versuch mit etwas
+                    größerer Entfernung unternehmen. Die Auswahl nutzt Ihr
+                    Persönlichkeitsprofil, Ihre Angaben (gewünschtes Geschlecht,
+                    Altersspanne, Entfernung), Ihren Standort und Signale aus Ihren
+                    bisherigen Matches — darunter das in Abschnitt&nbsp;3 beschriebene
+                    interne Qualitätssignal, das aus dem Match-Ende-Feedback Ihrer
+                    Partner:innen und Nutzungssignalen gebildet wird. Ein
+                    Kompatibilitätswert wird berechnet und Ihnen angezeigt.
+                </p>
+                <p>
+                    Es handelt sich um eine automatisierte Auswahl, die jedoch keine
+                    rechtliche Wirkung oder ähnlich erhebliche Beeinträchtigung im Sinne
+                    von Art.&nbsp;22 DSGVO entfaltet — sie schlägt eine Person zum
+                    Kennenlernen vor, und Sie können jedes Match beenden. Wenn Sie eine
+                    Überprüfung durch einen Menschen wünschen, wie ein Match oder Ihr
+                    Qualitätssignal zustande kam, oder dieses anfechten möchten,
+                    kontaktieren Sie uns.
+                </p>
+            </section>
+
+            <section class="block" id="rechte">
+                <h2>10. Ihre Rechte</h2>
+                <p>Nach der DSGVO haben Sie das Recht:</p>
+                <ul>
+                    <li>Auskunft über die zu Ihnen gespeicherten personenbezogenen Daten
+                        zu erhalten (Art.&nbsp;15);</li>
+                    <li>unrichtige Daten berichtigen zu lassen (Art.&nbsp;16);</li>
+                    <li>Ihre Daten löschen zu lassen (Art.&nbsp;17);</li>
+                    <li>die Verarbeitung in bestimmten Fällen einschränken zu lassen
+                        (Art.&nbsp;18);</li>
+                    <li>bestimmte Daten in einem übertragbaren, maschinenlesbaren Format zu
+                        erhalten (Art.&nbsp;20);</li>
+                    <li>der Verarbeitung auf Grundlage unserer berechtigten Interessen aus
+                        Gründen Ihrer besonderen Situation zu widersprechen
+                        (Art.&nbsp;21);</li>
+                    <li>eine erteilte Einwilligung jederzeit mit Wirkung für die Zukunft zu
+                        widerrufen (Art.&nbsp;7 Abs.&nbsp;3).</li>
+                </ul>
+                <p>
+                    Zur Ausübung dieser Rechte schreiben Sie an
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a>. Wir können
+                    Sie bitten, die E-Mail-Adresse Ihres Kontos zu bestätigen, um Ihre
+                    Identität sicherzustellen. Wir antworten innerhalb eines Monats.
+                </p>
+            </section>
+
+            <section class="block" id="loeschen">
+                <h2>11. Konto löschen</h2>
+                <p>
+                    Sie können Ihr Konto jederzeit selbst löschen:
+                    <strong>Einstellungen → Konto → Konto löschen</strong>. Damit endet
+                    ein laufendes Match, und Ihre persönlichen Angaben, Ihr Geburtsdatum,
+                    Ihre Fotos, Ihre Persönlichkeitsantworten und Ihr Profil, Ihre
+                    Präferenzen sowie das von Ihnen über andere abgegebene Feedback werden
+                    endgültig gelöscht. Ihr Profildatensatz wird zu einem anonymen
+                    Platzhalter, damit vergangene Gespräche für Ihre Gesprächspartner:innen
+                    verständlich bleiben, und Ihre Anmeldung wird dauerhaft deaktiviert.
+                    Match-Datensätze und bereits von Ihnen gesendete Nachrichten bleiben
+                    gemäß Abschnitt&nbsp;8 erhalten. Ist eine Meldung oder Sperre
+                    betroffen, kann ein Gesprächs-Snapshot zu den in Abschnitt&nbsp;8
+                    genannten Zwecken und Fristen aufbewahrt werden. Sie können die
+                    Löschung Ihres Kontos auch per E-Mail verlangen.
+                </p>
+            </section>
+
+            <section class="block" id="sicherheit">
+                <h2>12. Sicherheit</h2>
+                <p>
+                    Daten werden über verschlüsselte Verbindungen (TLS) übertragen. Der
+                    Zugriff auf gespeicherte Daten ist durch Datenbank-Zugriffsregeln, die
+                    begrenzen, was jedes Konto lesen und schreiben darf, sowie durch
+                    eingeschränkten administrativen Zugang geschützt. Passwörter werden von
+                    unserem Authentifizierungsdienstleister nur als gesalzene Hashes
+                    gespeichert. Kein Onlinedienst ist vollständig sicher, aber wir
+                    bemühen uns, Ihre Daten zu schützen, und benachrichtigen Sie und die
+                    Behörden, wenn eine Verletzung dies rechtlich erfordert.
+                </p>
+            </section>
+
+            <section class="block" id="alter">
+                <h2>13. Altersgrenze</h2>
+                <p>
+                    Sundae ist nur für Personen ab <strong>18&nbsp;Jahren</strong>. Wir
+                    fragen bei der Registrierung Ihr Geburtsdatum ab, um dies zu prüfen,
+                    und verarbeiten nicht wissentlich Daten von Personen unter 18. Erlangen
+                    wir Kenntnis davon, dass ein Konto einer minderjährigen Person gehört,
+                    löschen wir es.
+                </p>
+            </section>
+
+            <section class="block" id="website">
+                <h2>14. Diese Website</h2>
+                <p>
+                    Diese Website ist eine statische Informationsseite. Sie setzt
+                    <strong>keine</strong> Werbe- oder Analyse-Cookies und bindet keine
+                    Tracker Dritter ein. Eine etwaige Einstellung wie die Design-Farbe
+                    wird nur in Ihrem Browser gespeichert.
+                </p>
+                <p>
+                    Die Seite wird über <strong>GitHub Pages</strong> gehostet. Beim
+                    Aufruf erhält GitHub automatisch technische Informationen, die Ihr
+                    Browser sendet, etwa Ihre IP-Adresse, die angeforderte Seite, den
+                    Referrer, Zeitstempel und User-Agent. Dies erfolgt auf Grundlage
+                    unseres berechtigten Interesses (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f
+                    DSGVO) am Betrieb und der Absicherung der Seite und wird nur kurz
+                    aufbewahrt.
+                </p>
+                <p>
+                    Das Warteliste-Formular sendet keine Daten an einen Server. Beim
+                    Absenden öffnet Ihre eigene E-Mail-App eine vorausgefüllte Nachricht
+                    an <a href="mailto:support@sundae.pro">support@sundae.pro</a>; die
+                    E-Mail wird nur versendet, wenn Sie sie senden. Wir verwenden die von
+                    Ihnen angegebene Adresse, um Sie über den Start zu informieren, und
+                    löschen sie danach oder auf Anfrage.
+                </p>
+            </section>
+
+            <section class="block" id="aenderungen">
+                <h2>15. Änderungen dieser Erklärung</h2>
+                <p>
+                    Wir können diese Erklärung anpassen, wenn sich die App
+                    weiterentwickelt oder die Rechtslage ändert. Das Datum „Stand“ oben
+                    gibt stets die aktuelle Fassung an. Über wesentliche Änderungen
+                    informieren wir vor ihrem Wirksamwerden in der App oder per E-Mail.
+                </p>
+            </section>
+
+            <section class="block" id="kontakt">
+                <h2>16. Kontakt und Beschwerderecht</h2>
+                <p>
+                    Für Datenschutzanliegen und -anträge wenden Sie sich an
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a>.
+                </p>
+                <p>
+                    Wenn Sie der Ansicht sind, dass unsere Verarbeitung Ihrer Daten gegen
+                    die DSGVO verstößt, haben Sie das Recht, sich bei einer
+                    Aufsichtsbehörde zu beschweren, insbesondere im EU-Mitgliedstaat Ihres
+                    gewöhnlichen Aufenthalts, Ihres Arbeitsplatzes oder des Orts des
+                    mutmaßlichen Verstoßes. In Deutschland ist dies die
+                    Datenschutz-Aufsichtsbehörde des Bundeslandes, in dem der
+                    Verantwortliche seinen Sitz hat oder in dem Sie wohnen. Ein
+                    Verzeichnis der Landesbehörden veröffentlicht die/der
+                    Bundesbeauftragte für den Datenschutz unter
+                    <a href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html" target="_blank" rel="noopener">bfdi.bund.de</a>.
+                    Für Göttingen ist die
+                    <a href="https://lfd.niedersachsen.de/" target="_blank" rel="noopener">Landesbeauftragte für den Datenschutz Niedersachsen</a>
+                    zuständig.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <span>© <span id="year">2026</span> Sundae</span>
+            <span class="links">
+                <a href="index.html">Startseite</a>
+                <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+                <a href="eula-de.html">EULA</a>
+                <a href="impressum.html">Impressum</a>
+            </span>
+        </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

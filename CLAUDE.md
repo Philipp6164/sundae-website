@@ -13,20 +13,27 @@ Hosted on **GitHub Pages** at **sundae.pro** (see `CNAME`).
 
 ## Files
 
-- [index.html](index.html) — the landing page (nav, hero, statement, how-it-works, the
-  week, personality/blur demo, learning loop, insights, Sundae+, safety, FAQ, CTA, footer).
-- [privacy.html](privacy.html) — GDPR/BDSG privacy policy.
-- [terms.html](terms.html) — Terms of Use (German law, consumer-facing).
-- [eula.html](eula.html) — End User License Agreement: app licence + the zero-tolerance /
-  objectionable-content / 24h-response clauses Apple (Guideline 1.2) and Google require
-  for UGC apps, including Apple's mandated App Store schedule.
-- [imprint.html](imprint.html) — § 5 DDG legal notice (operator is a Kleinunternehmer
-  per § 19 UStG, uses a delivery-address service, no phone line).
+- [index.html](index.html) — the landing page, English only (nav, hero, statement,
+  how-it-works, the week, personality/blur demo, learning loop, insights, Sundae+, safety,
+  FAQ, CTA, footer). Footer has both an EN and a DE legal-links column.
+- **Legal pages — every one exists in English and German, as a pair:**
+  - privacy policy: [privacy.html](privacy.html) ↔ [datenschutz.html](datenschutz.html)
+  - terms of use: [terms.html](terms.html) ↔ [nutzungsbedingungen.html](nutzungsbedingungen.html)
+  - EULA (app licence + Apple Guideline 1.2 zero-tolerance / objectionable-content /
+    24h-response clauses + Apple's mandated App Store schedule):
+    [eula.html](eula.html) ↔ [eula-de.html](eula-de.html)
+  - § 5 DDG legal notice: [imprint.html](imprint.html) ↔ [impressum.html](impressum.html)
 
-All are self-contained: markup + one `<style>` block + tiny inline `<script>`. No
+  The **German version is the authoritative one** (stated in each doc's governing-law /
+  scope section); English is a convenience translation. A `.langswitch` pill in each
+  legal page's `<nav>` links EN↔DE. Section `id`s are the same across a pair (English
+  slugs in the EN file, German slugs in the DE file for its own TOC; cross-doc anchors
+  use whatever that target file uses). Keep the two halves of a pair in sync when editing.
+
+All files are self-contained: markup + one `<style>` block + tiny inline `<script>`. No
 bundler, framework, package manager, or tests. Preview by opening a file directly or
-`python -m http.server` from the repo root. The four legal pages share a CSS block (kept
-in sync by hand) and cross-link each other in their footers + TOCs.
+`python -m http.server` from the repo root. The legal pages share a CSS block (kept in
+sync by hand) and cross-link each other in their footers + TOCs.
 
 ## Conventions
 
@@ -61,7 +68,7 @@ in sync by hand) and cross-link each other in their footers + TOCs.
 ## Legal texts mirror specific app behaviour
 
 The privacy policy / terms / EULA were written against the app's SQL (in the app repo,
-`sql/`). If these change in the app, update the docs:
+`sql/`). If these change in the app, update **both language versions** of the doc:
 - date-of-birth age gate (`birth_date.sql`) → privacy "Age verification" row, terms §3, eula §9
 - Sunday drop **plus a Tuesday second-chance drop** (`reset_schedule.sql`) → "one per
   cycle, tries again mid-week" wording everywhere (not literally "every Sunday" in legal text)
@@ -70,6 +77,7 @@ The privacy policy / terms / EULA were written against the app's SQL (in the app
 - match history, Sundae+ vs free (`match_history.sql`) → privacy + terms §9 + index Sundae+ feature 04
 - partner can read your derived personality dimensions (`match_personality.sql`) →
   privacy "Other users"
-- report → Discord/Slack webhook (`sql/moderation/05`) → privacy processors list
 - conversation snapshots + 90-day post-ban erasure (`sql/moderation/01,03,06`) → privacy §8
 - `delete_my_account` = anonymise + keep messages as "Deleted user" → privacy §8/§11
+- `sql/moderation/05` webhook (Discord/Slack) is NOT used — reports reviewed via a local
+  admin tool; privacy §6 says exactly that. Revisit if the operator ever wires the webhook.
