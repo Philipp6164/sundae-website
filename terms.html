@@ -123,6 +123,16 @@
             color: var(--muted);
         }
 
+        .flag {
+            border-left: 3px solid var(--ink);
+            background: #efe9e1;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin: 20px 0;
+            color: var(--ink-soft);
+        }
+        .flag strong { display: block; margin-bottom: 6px; }
+
         .placeholder {
             background: #efe7d9;
             border-radius: 4px;
@@ -163,7 +173,7 @@
             <span class="eyebrow">Legal</span>
             <h1>Terms of Use</h1>
             <p class="meta">
-                Last updated: 7&nbsp;September&nbsp;2026 · Effective when you create an
+                Last updated: 9&nbsp;September&nbsp;2026 · Effective when you create an
                 account or otherwise use Sundae.
             </p>
         </div>
@@ -173,10 +183,13 @@
         <div class="wrap">
 
             <div class="callout">
-                <strong>In plain terms.</strong> Sundae gives you one match per week, no
-                feed, no swiping. Be 18+, be honest, be decent to your match, and don't
-                misuse the service. You can cancel Sundae+ or delete your account at any
-                time. The full terms are below and they are what legally applies.
+                <strong>In plain terms.</strong> Sundae gives you one match per weekly
+                cycle, no feed, no swiping. Be 18+, be honest, be decent to your match,
+                and don't misuse the service. There is <strong>zero tolerance</strong>
+                for objectionable content and abusive users — report or block from any
+                chat, and we act within 24&nbsp;hours. You can cancel Sundae+ or delete
+                your account at any time. The full terms are below and they are what
+                legally applies.
             </div>
 
             <nav class="toc" aria-label="Contents">
@@ -188,33 +201,34 @@
                     <li><a href="#service">The service</a></li>
                     <li><a href="#account">Your account</a></li>
                     <li><a href="#conduct">Rules of conduct</a></li>
+                    <li><a href="#objectionable">Zero tolerance for objectionable content</a></li>
                     <li><a href="#content">Your content</a></li>
                     <li><a href="#safety">Safety and meeting people</a></li>
                     <li><a href="#plus">Sundae+ subscription</a></li>
-                    <li><a href="#moderation">Moderation and suspension</a></li>
+                    <li><a href="#moderation">Moderation, reporting and suspension</a></li>
                     <li><a href="#termination">Ending your use of Sundae</a></li>
                     <li><a href="#availability">Availability and changes</a></li>
                     <li><a href="#liability">Liability</a></li>
                     <li><a href="#ip">Our intellectual property</a></li>
                     <li><a href="#law">Governing law and disputes</a></li>
                     <li><a href="#final">Final provisions</a></li>
-                    <li><a href="#imprint">Legal notice</a></li>
+                    <li><a href="#docs">Related documents and legal notice</a></li>
                 </ol>
             </nav>
 
             <section class="block" id="provider">
                 <h2>1. Who provides Sundae</h2>
                 <p>
-                    Sundae (the <strong>“app”</strong>) and this website are provided by:
+                    Sundae (the <strong>“app”</strong>) and this website
+                    (<strong>sundae.pro</strong>) are provided by
+                    Philipp Ludwig Syring, Lange-Geismar-Str. 62, 37073 Göttingen,
+                    Germany — referred to here as <strong>“we”</strong>,
+                    <strong>“us”</strong> or <strong>“Sundae”</strong>.
                 </p>
                 <p>
-                    <span class="placeholder">[FULL NAME]</span>,
-                    <span class="placeholder">[STREET AND HOUSE NUMBER]</span>,
-                    <span class="placeholder">[POSTAL CODE, CITY]</span>,
-                    <span class="placeholder">[COUNTRY]</span> —
-                    referred to here as <strong>“we”</strong>, <strong>“us”</strong> or
-                    <strong>“Sundae”</strong>. Contact:
-                    <a href="mailto:support@sundae.pro">support@sundae.pro</a>.
+                    Contact: <a href="mailto:support@sundae.pro">support@sundae.pro</a>.
+                    Full provider identification is on the
+                    <a href="imprint.html">Legal notice</a> page.
                 </p>
             </section>
 
@@ -238,7 +252,9 @@
                 <h2>3. Eligibility</h2>
                 <ul>
                     <li>You must be at least <strong>18 years old</strong> and legally able
-                        to enter into a contract.</li>
+                        to enter into a contract. You provide your date of birth during
+                        sign-up so we can verify this; entering a false date of birth is a
+                        breach of these terms.</li>
                     <li>You may hold <strong>one account</strong> only, for yourself, as a
                         natural person. Sundae is for personal, non-commercial use.</li>
                     <li>Your registration details and profile information must be
@@ -260,18 +276,24 @@
                     <li>You complete a one-time personality test and set your preferences.</li>
                     <li>Once per weekly cycle, Sundae introduces you to <strong>one</strong>
                         other member selected automatically based on personality,
-                        preferences, distance and prior feedback.</li>
-                    <li>Each match runs for a limited period (around one week). Either
-                        person can end it earlier. When it ends, you may be asked for
-                        brief feedback.</li>
+                        preferences, distance and signals from your past matches. The main
+                        introduction is on Sunday; if you were not matched, Sundae may try
+                        again once mid-week.</li>
+                    <li>Each match runs for a limited period (up to about one week, and no
+                        longer than the current cycle). Either person can end it earlier.
+                        When it ends, you may be asked for brief feedback.</li>
                     <li>A match's photo is shown blurred at first and is revealed
                         gradually as the conversation progresses.</li>
+                    <li>While you are matched, your match can see the personality profile
+                        Sundae derives from your test (as compatibility indicators, not
+                        your individual answers), and — with Sundae+ — your full profile
+                        and, later, a history of past matches.</li>
                     <li>There is no browsing feed and no ability to search for or select
                         specific people.</li>
                 </ul>
                 <p>
                     We do <strong>not guarantee</strong> that you will receive a match in
-                    any given week, that a match will reply, that any connection will
+                    any given cycle, that a match will reply, that any connection will
                     result, or that other members' information is accurate. Matching
                     logic, timing and features may change over time.
                 </p>
@@ -318,6 +340,33 @@
                     <strong>report</strong> behaviour that breaks these rules from within
                     the chat. Reporting a person also ends the match and blocks them.
                 </p>
+
+                <h3 id="objectionable">Zero tolerance for objectionable content and abusive users</h3>
+
+                <div class="flag">
+                    <strong>Zero-tolerance policy</strong>
+                    Sundae has <strong>no tolerance</strong> for objectionable content or
+                    for abusive, harassing or predatory users.
+                </div>
+
+                <p>
+                    <strong>Objectionable content and abusive use</strong> means anything
+                    covered by the list above — in particular harassment, hate, threats,
+                    non-consensual or explicit sexual content, any sexualisation of
+                    minors, violent or self-harm content, scams and fraud, impersonation,
+                    and sharing another person's private information. The list is
+                    illustrative, not exhaustive; we decide, acting reasonably, whether
+                    something falls within it.
+                </p>
+                <p>
+                    We keep such content and users off Sundae through clear rules, in-app
+                    reporting and blocking from every conversation, human review of every
+                    report, and the right to remove content and suspend or permanently
+                    ban accounts — including on our own initiative. Our response times are
+                    in section 10, and the full policy, including the terms Apple requires
+                    for user-generated-content apps, is in the
+                    <a href="eula.html">End User License Agreement</a>.
+                </p>
             </section>
 
             <section class="block" id="content">
@@ -362,14 +411,17 @@
                 <h2>9. Sundae+ subscription</h2>
                 <p>
                     Sundae is free to use. <strong>Sundae+</strong> is an optional paid
-                    subscription that unlocks additional, non-matchmaking features (such
-                    as seeing a match's full profile and deeper personal insights). It
+                    subscription that unlocks additional, non-matchmaking features — such
+                    as seeing a match's full profile, deeper personal insights,
+                    personalised recommendations, and a history of your past matches. It
                     does not change who you are matched with.
                 </p>
                 <ul>
                     <li><strong>Price:</strong> 2,99&nbsp;€ per month (price for Germany;
-                        the amount shown in your app store applies and may vary by region,
-                        taxes and store).</li>
+                        the amount shown in your app store applies and may vary by region
+                        and store). We are a small business under §&nbsp;19 UStG and do
+                        not show VAT separately; app-store sales tax, where it applies, is
+                        handled by Apple or Google as the marketplace.</li>
                     <li><strong>Billing:</strong> purchases are processed by Apple or
                         Google through your store account, under their terms. We do not
                         receive your payment details.</li>
@@ -393,16 +445,33 @@
             </section>
 
             <section class="block" id="moderation">
-                <h2>10. Moderation and suspension</h2>
+                <h2>10. Moderation, reporting and suspension</h2>
                 <p>
-                    To keep Sundae safe, we may review reports and, where reasonably
-                    necessary, restrict, suspend or permanently ban an account, remove
-                    content, or end a match — for example where we believe these terms
-                    have been broken, where there is a risk to other members, or where we
-                    are legally required to act. Where practical and lawful, we will give
-                    you notice and a reason, and you can object by contacting
+                    You can report a match from the conversation menu (this also blocks
+                    the person and ends the match), or email
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a>. When a
+                    report is filed, the relevant conversation is captured so it can be
+                    assessed even if an account is later deleted.
+                </p>
+                <p>
+                    <strong>We review every report of objectionable content or abusive
+                    use within 24&nbsp;hours</strong> and, where it is upheld, remove the
+                    content and/or suspend or permanently ban the account responsible. We
+                    aim to answer report-related and other support emails within
+                    24&nbsp;hours and in any case without undue delay.
+                </p>
+                <p>
+                    More generally, we may review reports and, where reasonably necessary,
+                    restrict, suspend or permanently ban an account, remove content, or
+                    end a match — for example where we believe these terms have been
+                    broken, where there is a risk to other members, or where we are
+                    legally required to act. We may also act on our own initiative. Where
+                    practical and lawful, we will give you notice and a reason, and you
+                    can object by contacting
                     <a href="mailto:support@sundae.pro">support@sundae.pro</a>. A banned
-                    account loses access to matches and messages.
+                    account loses access to matches and messages. The full content policy
+                    is in the <a href="eula.html#zero-tolerance">End User License
+                    Agreement</a>.
                 </p>
             </section>
 
@@ -430,7 +499,7 @@
                     We may change these terms where there is a valid reason — for example
                     a change in the service, in technology, or in the law. We will notify
                     you of material changes in the app or by email at least
-                    <span class="placeholder">[e.g. 30]</span> days before they take
+                    30&nbsp;days before they take
                     effect. If you do not accept the change, you may terminate by
                     deleting your account before it takes effect; continued use after
                     that date means you accept the updated terms.
@@ -508,13 +577,19 @@
                 </p>
             </section>
 
-            <section class="block" id="imprint">
-                <h2>17. Legal notice</h2>
-                <p>
-                    Information pursuant to §&nbsp;5 of the German Digital Services Act
-                    (DDG) is available on our
-                    <a href="imprint.html">Legal notice</a> page.
-                </p>
+            <section class="block" id="docs">
+                <h2>17. Related documents and legal notice</h2>
+                <p>These terms should be read together with:</p>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a> — what data we process
+                        and why.</li>
+                    <li><a href="eula.html">End User License Agreement</a> — your licence
+                        to the app and the full policy on objectionable content and
+                        abusive users (required for user-generated-content apps by Apple
+                        and Google).</li>
+                    <li><a href="imprint.html">Legal notice</a> — provider identification
+                        pursuant to §&nbsp;5 of the German Digital Services Act (DDG).</li>
+                </ul>
             </section>
 
         </div>
@@ -526,6 +601,7 @@
             <span class="links">
                 <a href="index.html">Home</a>
                 <a href="privacy.html">Privacy Policy</a>
+                <a href="eula.html">EULA</a>
                 <a href="imprint.html">Legal notice</a>
             </span>
         </div>

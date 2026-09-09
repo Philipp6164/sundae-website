@@ -207,8 +207,8 @@
             <span class="eyebrow">Legal</span>
             <h1>Privacy Policy</h1>
             <p class="meta">
-                Last updated: 7&nbsp;September&nbsp;2026 · Applies to the Sundae mobile
-                app and this website.
+                Last updated: 9&nbsp;September&nbsp;2026 · Applies to the Sundae mobile
+                app and this website (sundae.pro).
             </p>
         </div>
     </header>
@@ -254,16 +254,16 @@
                     Federal Data Protection Act (BDSG) is:
                 </p>
                 <p>
-                    <span class="placeholder">[FULL NAME]</span><br>
-                    <span class="placeholder">[STREET AND HOUSE NUMBER]</span><br>
-                    <span class="placeholder">[POSTAL CODE, CITY]</span><br>
-                    <span class="placeholder">[COUNTRY]</span><br>
-                    Email: <a href="mailto:support@sundae.pro">support@sundae.pro</a>
+                    Philipp Ludwig Syring (an individual)<br>
+                    Lange-Geismar-Str. 62, 37073 Göttingen, Germany<br>
+                    Email: <a href="mailto:support@sundae.pro">support@sundae.pro</a><br>
+                    Full provider identification: <a href="imprint.html">Legal notice</a>.
                 </p>
                 <p>
                     Sundae is operated by an individual. We are not legally required to
                     appoint a data protection officer, and we have not appointed one. For
-                    any privacy question, use the contact address above.
+                    any privacy question, use the contact address above; we aim to reply
+                    within 24&nbsp;hours.
                 </p>
             </section>
 
@@ -294,8 +294,14 @@
                             preference, and whether you have accepted the terms.</td>
                     </tr>
                     <tr>
+                        <th>Age verification</th>
+                        <td>Your date of birth, entered during sign-up, and the whole-year
+                            age derived from it. Used to confirm you are 18 or older and
+                            for age-range matching.</td>
+                    </tr>
+                    <tr>
                         <th>Profile</th>
-                        <td>First name, age, gender, who you want to meet, a profile photo,
+                        <td>First name, gender, who you want to meet, a profile photo,
                             and — if you add them — additional photos, a short bio, prompt
                             answers, height, interests, relationship intentions, relationship
                             style, and whether you have or want children.</td>
@@ -303,8 +309,11 @@
                     <tr>
                         <th>Personality test</th>
                         <td>Your answers to the one-time personality questionnaire and the
-                            personality profile calculated from them. This is used for
-                            matching and for your personal insights.</td>
+                            personality profile (a set of dimension scores) calculated from
+                            them. Used for matching and for your personal insights. While
+                            you are matched, your dimension scores — not your individual
+                            answers — can be shown to that match to explain your
+                            compatibility.</td>
                     </tr>
                     <tr>
                         <th>Location</th>
@@ -316,7 +325,10 @@
                     <tr>
                         <th>Matches &amp; messages</th>
                         <td>Records of who you were matched with and when, the compatibility
-                            score, match status, and the messages you exchange with a match.</td>
+                            score, match status, and the messages you exchange with a match.
+                            Past matches are kept and shown to you in an in-app match
+                            history. If you enable notifications, a short preview of a new
+                            message can appear on your lock screen.</td>
                     </tr>
                     <tr>
                         <th>Feedback &amp; traits</th>
@@ -324,6 +336,15 @@
                             traits, whether you'd meet again, what happened afterwards), and
                             the aggregated “traits people notice” shown on your profile and
                             to your matches.</td>
+                    </tr>
+                    <tr>
+                        <th>Match quality signal</th>
+                        <td>An internal score we derive from how your past matches went —
+                            your partners' end-of-match feedback (in particular whether they
+                            would meet again) and engagement signals such as message counts
+                            and how a match ended. It is used to tune future matching and,
+                            potentially, to decide eligibility for a mid-week match. It is
+                            never shown to other users.</td>
                     </tr>
                     <tr>
                         <th>Safety &amp; moderation</th>
@@ -377,6 +398,13 @@
                             matches for you</th>
                         <td>Performance of a contract — Art. 6(1)(b) GDPR; for the
                             sensitive aspects, your explicit consent — Art. 9(2)(a) GDPR</td>
+                    </tr>
+                    <tr>
+                        <th>Deriving and using the internal match quality signal so that
+                            matching works well for everyone</th>
+                        <td>Performance of a contract — Art. 6(1)(b) GDPR; our legitimate
+                            interest in a functioning, fair matching service —
+                            Art. 6(1)(f) GDPR</td>
                     </tr>
                     <tr>
                         <th>Precise location and push notifications</th>
@@ -448,10 +476,13 @@
                 <p>
                     When you are matched, your match can see your profile: your first
                     name, age, photo (blurred until the reveal), city or approximate
-                    distance, prompts, interests and the traits others have noticed. With
-                    Sundae+, a match can also see the optional details you added. Your
-                    email, exact coordinates, personality answers and feedback are never
-                    shown to other users.
+                    distance, prompts, interests, the traits others have noticed, and
+                    your personality dimension scores shown as compatibility indicators.
+                    With Sundae+, a match can also see the optional details you added and,
+                    later, that you were a past match of theirs. Your email, date of
+                    birth, exact coordinates, individual personality answers, your
+                    feedback about others and the internal quality signal are never shown
+                    to other users.
                 </p>
 
                 <h3>Service providers (processors)</h3>
@@ -460,20 +491,23 @@
                     under data processing agreements:
                 </p>
                 <ul>
-                    <li><strong>Supabase</strong> — database, authentication, file storage
-                        (your photos) and realtime messaging. This is where your Sundae
-                        data is stored. See
+                    <li><strong>Supabase</strong> (Supabase, Inc.) — database,
+                        authentication, file storage (your photos), realtime messaging and
+                        the sending of account emails such as email confirmation and
+                        password resets. This is where your Sundae data is stored. See
                         <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>.</li>
                     <li><strong>Expo</strong> (Expo Application Services) — delivery of push
                         notifications via a device push token, if you enable them. See
                         <a href="https://expo.dev/privacy" target="_blank" rel="noopener">expo.dev/privacy</a>.</li>
-                    <li><strong>Our email provider</strong> — sending account emails such as
-                        email confirmation and password resets.
-                        <span class="placeholder">[EMAIL PROVIDER, e.g. the provider behind support@sundae.pro / Supabase default]</span></li>
-                    <li><strong>Our website host</strong> —
-                        <span class="placeholder">[HOSTING PROVIDER, e.g. Netlify / Vercel / GitHub Pages / Hetzner]</span>,
-                        which serves this website and keeps standard server logs.</li>
+                    <li><strong>GitHub Pages</strong> (GitHub, Inc.) — hosting for this
+                        website (sundae.pro). GitHub keeps standard server logs. See
+                        <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's privacy statement</a>.</li>
                 </ul>
+                <p>
+                    Reports are reviewed by us through a private admin tool that connects
+                    directly to the Supabase database; report data is not sent to any
+                    additional third-party service.
+                </p>
 
                 <h3>App stores and payments</h3>
                 <p>
@@ -496,41 +530,48 @@
             <section class="block" id="transfers">
                 <h2>7. International data transfers</h2>
                 <p>
-                    Some of our providers may process data outside the European Economic
-                    Area, including in the United States. Where that happens, the transfer
-                    is protected by an adequacy decision of the European Commission or by
-                    <strong>Standard Contractual Clauses</strong> together with additional
-                    safeguards. You can request a copy of the relevant safeguards using
-                    the contact details in section 16.
+                    Your core Sundae data — your profile, messages, photos, personality
+                    data and everything else stored with Supabase — is held in the
+                    <strong>EU (West Europe, Ireland)</strong> region, inside the European
+                    Economic Area.
                 </p>
-                <p class="placeholder">
-                    [Confirm and, if you can, name the storage region you selected in
-                    Supabase — e.g. “Sundae data is stored in the EU (Frankfurt) region.”]
+                <p>
+                    Some processing still takes place outside the EEA, including in the
+                    United States: <strong>GitHub</strong> (website hosting and its server
+                    logs), <strong>Expo</strong> (delivery of push notifications), and any
+                    access to the Supabase platform by Supabase, Inc. from outside the
+                    EEA for support or operations. Where that happens, the transfer is
+                    protected by an adequacy decision of the European Commission (such as
+                    the EU–US Data Privacy Framework) or by <strong>Standard Contractual
+                    Clauses</strong> together with additional safeguards. You can request
+                    a copy of the relevant safeguards using the contact details in
+                    section 16.
                 </p>
             </section>
 
             <section class="block" id="retention">
                 <h2>8. How long we keep data</h2>
                 <ul>
-                    <li><strong>Account and profile data</strong> — for as long as your
-                        account exists. When you delete your account, this data is deleted
-                        or anonymised without undue delay.</li>
-                    <li><strong>Photos</strong> — deleted from storage when you remove them
-                        or delete your account.</li>
-                    <li><strong>Matches, messages and feedback</strong> — kept while your
-                        account is active so the service and your insights work, and
-                        deleted or anonymised when you delete your account. Your match's
-                        copy of messages you sent them may remain visible to that person.</li>
-                    <li><strong>Moderation records</strong> (reports, blocks, bans) — kept
-                        for up to <span class="placeholder">[e.g. 12–24 months]</span>
-                        after the event, or longer if needed to handle repeat abuse or a
-                        legal claim, even after account deletion, in a minimised form.</li>
-                    <li><strong>Support emails</strong> — kept for up to
-                        <span class="placeholder">[e.g. 24 months]</span> after the request
-                        is closed.</li>
+                    <li><strong>Account, age-verification and profile data, personality
+                        data, preferences, photos, and your own match feedback</strong> —
+                        kept while your account exists; hard-deleted when you delete your
+                        account (see section 11).</li>
+                    <li><strong>Matches and messages</strong> — kept while your account is
+                        active so the service, your match history and your insights work.
+                        When you delete your account, the match records are kept but your
+                        profile becomes an anonymous placeholder (“Deleted user”), and the
+                        messages you already sent remain visible to the people you sent
+                        them to, attributed to that placeholder.</li>
+                    <li><strong>Moderation records</strong> — a report and the conversation
+                        snapshot taken with it are kept for as long as needed to handle
+                        the report, an appeal, repeat-abuse detection or a legal claim.
+                        If an account is banned, its data is kept to handle appeals and
+                        ban evasion and is then anonymised, as a rule within
+                        <strong>90 days</strong> of the ban.</li>
+                    <li><strong>Support emails</strong> — kept for up to 24 months after
+                        the request is closed.</li>
                     <li><strong>Website server logs</strong> — kept for a short period by
-                        our host (typically up to a few weeks) for security and
-                        troubleshooting.</li>
+                        GitHub (typically a few weeks) for security and troubleshooting.</li>
                     <li>Where we are subject to statutory retention periods (for example
                         under tax or commercial law), we keep the relevant records for as
                         long as the law requires and restrict processing in the meantime.</li>
@@ -540,18 +581,22 @@
             <section class="block" id="matching">
                 <h2>9. How matching works</h2>
                 <p>
-                    Once per weekly cycle, Sundae selects one candidate for you. The
-                    selection uses your personality profile, your stated preferences
-                    (who you want to meet, age range, distance), your location, and
-                    signals from your past matches and feedback. A compatibility score is
-                    calculated and shown to you.
+                    Once per weekly cycle, Sundae selects one candidate for you. The main
+                    introduction runs on Sunday; if you were not matched, Sundae may make
+                    one further attempt mid-week, with a slightly wider distance. The
+                    selection uses your personality profile, your stated preferences (who
+                    you want to meet, age range, distance), your location, and signals
+                    from your past matches — including the internal quality signal
+                    described in section 3, which is built from your partners'
+                    end-of-match feedback and engagement signals. A compatibility score
+                    is calculated and shown to you.
                 </p>
                 <p>
                     This is an automated selection, but it does not produce a legal or
                     similarly significant effect on you within the meaning of Art. 22
-                    GDPR — it simply proposes a person to talk to, and you are free to
-                    end any match. If you would like a human to review how a match was
-                    generated, contact us.
+                    GDPR — it proposes a person to talk to, and you are free to end any
+                    match. If you would like a human to review how a match or your quality
+                    signal was generated, or to contest it, contact us.
                 </p>
             </section>
 
@@ -583,10 +628,15 @@
                 <p>
                     You can delete your account yourself at any time:
                     <strong>Settings → Account → Delete account</strong>. This ends any
-                    active match, removes your profile and photos, and deletes or
-                    anonymises your data as described in section 8. Some minimised
-                    safety records may be retained as set out above. You can also ask us
-                    to delete your account by email.
+                    active match and permanently hard-deletes your personal details,
+                    date of birth, photos, personality answers and profile, preferences,
+                    and the feedback you gave about others. Your profile row is turned
+                    into an anonymous placeholder so that past conversations still make
+                    sense to the people you talked to, and your sign-in is permanently
+                    disabled. Match records and the messages you already sent are kept as
+                    described in section 8. Where a report or ban is involved, a
+                    conversation snapshot may be retained for the purposes and periods in
+                    section 8. You can also ask us to delete your account by email.
                 </p>
             </section>
 
@@ -606,9 +656,10 @@
             <section class="block" id="children">
                 <h2>13. Age limit</h2>
                 <p>
-                    Sundae is only for people aged <strong>18 or older</strong>. We do not
-                    knowingly process data of anyone under 18. If we learn that an account
-                    belongs to a minor, we will delete it.
+                    Sundae is only for people aged <strong>18 or older</strong>. We ask
+                    for your date of birth during sign-up to check this and do not
+                    knowingly process data of anyone under 18. If we learn that an
+                    account belongs to a minor, we will delete it.
                 </p>
             </section>
 
@@ -621,12 +672,12 @@
                     any, are stored only in your browser.
                 </p>
                 <p>
-                    When you load the site, our hosting provider automatically receives
-                    technical information that your browser sends, such as your IP
-                    address, the requested page, referrer, timestamp and user-agent.
-                    This is processed on the basis of our legitimate interest
-                    (Art. 6(1)(f) GDPR) in operating and securing the site, and is kept
-                    only briefly.
+                    The site is hosted on <strong>GitHub Pages</strong>. When you load it,
+                    GitHub automatically receives technical information that your browser
+                    sends, such as your IP address, the requested page, referrer,
+                    timestamp and user-agent. This is processed on the basis of our
+                    legitimate interest (Art. 6(1)(f) GDPR) in operating and securing the
+                    site, and is kept only briefly.
                 </p>
                 <p>
                     The waitlist form does not send data to a server. When you submit it,
@@ -660,10 +711,12 @@
                     of work, or the place of the alleged infringement. The authority
                     responsible for the controller is:
                 </p>
-                <p class="placeholder">
-                    [Your competent authority — e.g. Der Landesbeauftragte für den
-                    Datenschutz [BUNDESLAND], address, website. Fill in based on where you
-                    live.]
+                <p>
+                    In Germany, this is the data protection authority of the federal
+                    state in which the controller is based or in which you live. A
+                    directory of the German state authorities is published by the Federal
+                    Commissioner for Data Protection at
+                    <a href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html" target="_blank" rel="noopener">bfdi.bund.de</a>.
                 </p>
             </section>
 
@@ -676,6 +729,7 @@
             <span class="links">
                 <a href="index.html">Home</a>
                 <a href="terms.html">Terms of Use</a>
+                <a href="eula.html">EULA</a>
                 <a href="imprint.html">Legal notice</a>
             </span>
         </div>

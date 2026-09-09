@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End User License Agreement — Sundae</title>
+    <meta name="description" content="The licence agreement for the Sundae app, including our zero-tolerance policy for objectionable content and abusive users.">
+    <meta name="theme-color" content="#F7F5F2">
+    <meta name="robots" content="index, follow">
+
+    <style>
+        :root {
+            --bg: #F7F5F2;
+            --ink: #171717;
+            --ink-soft: #292724;
+            --muted: #55514C;
+            --muted-2: #77736D;
+            --faint: #99958F;
+            --line: #E4E0DA;
+            --line-strong: #D8D4CE;
+            --card: #ECE9E4;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink-soft);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a { color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+        body > nav {
+            border-bottom: 1px solid var(--line);
+            background: var(--bg);
+        }
+        body > nav .wrap {
+            max-width: 1180px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo { font-size: 22px; font-weight: 600; letter-spacing: -1px; color: var(--ink); }
+        .back { font-size: 14px; color: var(--muted-2); }
+        .back:hover { color: var(--ink); }
+
+        header.doc {
+            padding: clamp(56px, 9vw, 100px) 0 40px;
+            border-bottom: 1px solid var(--line);
+        }
+        header.doc .eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            color: var(--faint);
+        }
+        header.doc h1 {
+            margin-top: 18px;
+            font-size: clamp(36px, 6.5vw, 56px);
+            line-height: 1.04;
+            letter-spacing: -0.04em;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        header.doc .meta { margin-top: 20px; font-size: 14px; color: var(--muted-2); }
+
+        main { padding: 48px 0 96px; }
+
+        .toc {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 24px 26px;
+            margin-bottom: 56px;
+        }
+        .toc h2 {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--faint);
+            margin-bottom: 14px;
+        }
+        .toc ol { margin: 0; padding-left: 20px; display: grid; gap: 7px; }
+        .toc li { font-size: 14px; }
+        .toc a { color: var(--muted); text-decoration: none; }
+        .toc a:hover { color: var(--ink); text-decoration: underline; }
+
+        section.block { margin-bottom: 44px; scroll-margin-top: 24px; }
+        section.block h2 {
+            font-size: clamp(21px, 3.2vw, 27px);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+        section.block h3 { font-size: 16px; font-weight: 600; color: var(--ink-soft); margin: 22px 0 8px; }
+        section.block p { margin-bottom: 14px; color: var(--muted); }
+        section.block ul { margin: 0 0 14px; padding-left: 22px; color: var(--muted); }
+        section.block li { margin-bottom: 7px; }
+        section.block a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+
+        strong { color: var(--ink-soft); font-weight: 600; }
+
+        .callout {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 20px 22px;
+            margin: 20px 0;
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        .flag {
+            border-left: 3px solid var(--ink);
+            background: #efe9e1;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin: 20px 0;
+            color: var(--ink-soft);
+        }
+        .flag strong { display: block; margin-bottom: 6px; }
+
+        .placeholder {
+            background: #efe7d9;
+            border-radius: 4px;
+            padding: 1px 5px;
+            font-size: .95em;
+            color: #6b5a3c;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 40px 0;
+            font-size: 13px;
+            color: var(--faint);
+        }
+        footer .wrap {
+            max-width: 1180px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        footer a { color: var(--muted-2); text-decoration: none; }
+        footer a:hover { color: var(--ink); }
+        footer .links { display: flex; gap: 20px; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="wrap">
+            <a href="index.html" class="logo">sundae</a>
+            <a href="index.html" class="back">← Back to site</a>
+        </div>
+    </nav>
+
+    <header class="doc">
+        <div class="wrap">
+            <span class="eyebrow">Legal</span>
+            <h1>End User License Agreement</h1>
+            <p class="meta">
+                Last updated: 9&nbsp;September&nbsp;2026 · Applies to the Sundae mobile
+                app on iOS and Android.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <div class="callout">
+                <strong>The short version.</strong> This agreement licenses you to use
+                the Sundae app. It also sets out our <strong>zero-tolerance policy for
+                objectionable content and abusive users</strong>: such content and
+                behaviour are not allowed, anyone can report them from inside the app or
+                block another user instantly, and we review every report and act on it
+                within 24&nbsp;hours.
+            </div>
+
+            <nav class="toc" aria-label="Contents">
+                <h2>Contents</h2>
+                <ol>
+                    <li><a href="#about">About this agreement</a></li>
+                    <li><a href="#licence">Licence to use the app</a></li>
+                    <li><a href="#restrictions">Licence restrictions</a></li>
+                    <li><a href="#zero-tolerance">Zero tolerance for objectionable content and abusive users</a></li>
+                    <li><a href="#moderation">How we moderate</a></li>
+                    <li><a href="#reporting">Reporting and blocking</a></li>
+                    <li><a href="#response">Our 24-hour response commitment</a></li>
+                    <li><a href="#your-content">Your content and conduct</a></li>
+                    <li><a href="#age">Age requirement</a></li>
+                    <li><a href="#termination">Termination of the licence</a></li>
+                    <li><a href="#disclaimer">Disclaimers and liability</a></li>
+                    <li><a href="#apple">Apple App Store — additional terms</a></li>
+                    <li><a href="#google">Google Play</a></li>
+                    <li><a href="#changes">Changes</a></li>
+                    <li><a href="#law">Governing law</a></li>
+                    <li><a href="#contact">Contact and legal notice</a></li>
+                </ol>
+            </nav>
+
+            <section class="block" id="about">
+                <h2>1. About this agreement</h2>
+                <p>
+                    This End User License Agreement (<strong>“EULA”</strong>) is a
+                    contract between you and
+                    Philipp Ludwig Syring, an individual operating
+                    the dating service <strong>“Sundae”</strong>
+                    (<strong>“we”</strong>, <strong>“us”</strong>), for your use of the
+                    Sundae mobile application (the <strong>“app”</strong>).
+                </p>
+                <p>
+                    It applies together with our
+                    <a href="terms.html">Terms of Use</a> and
+                    <a href="privacy.html">Privacy Policy</a>. The Terms of Use govern the
+                    Sundae <em>service</em>; this EULA governs the app <em>software</em>
+                    and sets out the content and conduct rules that Apple and Google
+                    require for apps with user-generated content. If there is a conflict
+                    between this EULA and the Terms of Use on a content or licensing
+                    point, this EULA applies.
+                </p>
+                <p>
+                    By downloading, installing or using the app, you accept this EULA. If
+                    you do not accept it, do not use the app.
+                </p>
+            </section>
+
+            <section class="block" id="licence">
+                <h2>2. Licence to use the app</h2>
+                <p>
+                    We grant you a limited, non-exclusive, non-transferable, revocable
+                    licence to install and use the app for your own personal,
+                    non-commercial use, on a mobile device that you own or control, in
+                    line with this EULA, the Terms of Use, and the usage rules of the
+                    app store you downloaded it from. On the Apple App Store, this
+                    licence also follows the Usage Rules in the Apple Media Services
+                    Terms and Conditions.
+                </p>
+                <p>
+                    We and our licensors keep all rights in the app that are not
+                    expressly granted to you. The app is licensed, not sold.
+                </p>
+            </section>
+
+            <section class="block" id="restrictions">
+                <h2>3. Licence restrictions</h2>
+                <p>You must not, except where the law expressly permits it:</p>
+                <ul>
+                    <li>copy, modify, translate or create derivative works of the app;</li>
+                    <li>reverse engineer, decompile or disassemble the app, or try to
+                        derive its source code;</li>
+                    <li>rent, lease, lend, sell, sublicense or distribute the app;</li>
+                    <li>remove or alter any proprietary notices;</li>
+                    <li>use the app to build a competing product, or scrape or harvest
+                        data from it;</li>
+                    <li>circumvent, disable or interfere with security or
+                        integrity-related features of the app, or the one-match-per-cycle
+                        design;</li>
+                    <li>use the app in a way that breaks any applicable law or the rights
+                        of others.</li>
+                </ul>
+            </section>
+
+            <section class="block" id="zero-tolerance">
+                <h2>4. Zero tolerance for objectionable content and abusive users</h2>
+
+                <div class="flag">
+                    <strong>Zero-tolerance policy</strong>
+                    Sundae has <strong>no tolerance</strong> for objectionable content or
+                    for abusive, harassing or predatory users. Content that breaks these
+                    rules is removed, and the account responsible is suspended or
+                    permanently banned.
+                </div>
+
+                <p>
+                    By using the app you agree that you will not create, upload, post,
+                    send, display or otherwise make available any content, and you will
+                    not behave in any way, that:
+                </p>
+                <ul>
+                    <li>harasses, bullies, intimidates, threatens, defames or stalks any
+                        person;</li>
+                    <li>is hateful or promotes discrimination, bigotry or violence against
+                        people based on protected characteristics;</li>
+                    <li>is sexually explicit or pornographic, or that sends sexual content
+                        to a match who has not clearly welcomed it;</li>
+                    <li>sexualises minors in any way, or involves any content depicting or
+                        facilitating child sexual abuse;</li>
+                    <li>is violent, gory, or promotes self-harm, terrorism or other
+                        serious harm;</li>
+                    <li>is a scam, phishing, fraud, a request for money, or unsolicited
+                        promotion or spam;</li>
+                    <li>impersonates another person, or uses photos or identity details
+                        that are not your own;</li>
+                    <li>shares another person's private information, or republishes their
+                        photos or messages outside Sundae without consent;</li>
+                    <li>is illegal, infringes intellectual property or other rights, or
+                        encourages any of the above.</li>
+                </ul>
+                <p>
+                    We call this <strong>“objectionable content”</strong> and
+                    <strong>“abusive use”</strong>. This list is illustrative, not
+                    exhaustive. We decide, acting reasonably, whether content or conduct
+                    falls within it.
+                </p>
+            </section>
+
+            <section class="block" id="moderation">
+                <h2>5. How we moderate</h2>
+                <p>
+                    To keep objectionable content and abusive users off Sundae, we use a
+                    combination of measures:
+                </p>
+                <ul>
+                    <li><strong>Clear rules</strong> — the prohibitions in section 4 and
+                        in the <a href="terms.html#conduct">Terms of Use</a> are binding
+                        on every user.</li>
+                    <li><strong>In-app reporting</strong> — every match conversation has a
+                        report control. Reporting a person also immediately blocks them
+                        and ends the match.</li>
+                    <li><strong>In-app blocking</strong> — you can block any match at any
+                        time, which ends the match and prevents you being paired again.</li>
+                    <li><strong>Human review</strong> — we review every report. When a
+                        report is filed, the relevant conversation is captured so it can
+                        be assessed even if an account is later deleted.</li>
+                    <li><strong>Removal and ejection</strong> — we remove content that
+                        breaks the rules and suspend or permanently ban the account
+                        responsible. A banned user is dropped from the service and cannot
+                        sign back in.</li>
+                    <li><strong>Proactive action</strong> — we may review, restrict or
+                        remove content and accounts on our own initiative where we
+                        reasonably believe the rules have been broken or someone is at
+                        risk.</li>
+                </ul>
+                <p>
+                    We do not currently run automated scanning of photos or messages.
+                    Moderation is complaint-led and manual, backed by the tools above.
+                </p>
+            </section>
+
+            <section class="block" id="reporting">
+                <h2>6. Reporting and blocking</h2>
+                <h3>Report objectionable content or an abusive user</h3>
+                <p>
+                    In the app, open the match conversation, use the menu and choose
+                    <strong>Report</strong>, then pick a reason. This sends the report
+                    to us, blocks the person and ends the match.
+                </p>
+                <p>
+                    You can also email
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a> with the
+                    details. If the content is on this website or you cannot access the
+                    app, email is the right channel.
+                </p>
+                <h3>Block an abusive user</h3>
+                <p>
+                    In the match conversation menu, choose <strong>Block</strong>. The
+                    match ends immediately and Sundae will not pair you with that person
+                    again. You can review and undo blocks in
+                    <strong>Settings → Blocked people</strong>.
+                </p>
+            </section>
+
+            <section class="block" id="response">
+                <h2>7. Our 24-hour response commitment</h2>
+                <p>
+                    We <strong>review each report of objectionable content or abusive
+                    use within 24&nbsp;hours</strong> of receiving it. Where a report is
+                    upheld, we remove the offending content and/or suspend or permanently
+                    ban the account responsible.
+                </p>
+                <p>
+                    We aim to answer report-related emails and other user support
+                    emails within 24&nbsp;hours, and in any case without undue delay.
+                    We will keep you informed if a matter needs longer to resolve.
+                </p>
+            </section>
+
+            <section class="block" id="your-content">
+                <h2>8. Your content and conduct</h2>
+                <p>
+                    You are solely responsible for the content you provide and for your
+                    interactions with other users. You confirm that your content is
+                    yours to share and does not break section 4. The licence you grant us
+                    in your content is set out in the
+                    <a href="terms.html#content">Terms of Use</a>.
+                </p>
+                <p>
+                    We are not able to pre-screen every member or supervise every
+                    conversation, and — within the limits of the law and section 11 — we
+                    are not responsible for the conduct of other users. Safety guidance
+                    for meeting people is in the <a href="terms.html#safety">Terms of
+                    Use</a>.
+                </p>
+            </section>
+
+            <section class="block" id="age">
+                <h2>9. Age requirement</h2>
+                <p>
+                    The app is rated for and available only to people aged
+                    <strong>18 or older</strong>. You must provide your date of birth
+                    when you create an account so we can verify this. Accounts found to
+                    belong to a person under 18 are removed.
+                </p>
+            </section>
+
+            <section class="block" id="termination">
+                <h2>10. Termination of the licence</h2>
+                <p>
+                    This licence lasts until terminated. It ends automatically if you
+                    break this EULA. It also ends when you delete your account or the app,
+                    or when we suspend or permanently ban your account under section 5 or
+                    the <a href="terms.html#moderation">Terms of Use</a>. On termination
+                    you must stop using the app; you may delete it from your device.
+                    Sections that by their nature should survive (including sections 4,
+                    8, 11, 12 and 15) continue to apply.
+                </p>
+            </section>
+
+            <section class="block" id="disclaimer">
+                <h2>11. Disclaimers and liability</h2>
+                <p>
+                    To the extent permitted by law, the app is provided
+                    <strong>“as is”</strong> and <strong>“as available”</strong>, without
+                    warranties of any kind. We do not warrant that the app will be
+                    uninterrupted, error-free or secure, or that it will produce any
+                    particular match or result.
+                </p>
+                <p>
+                    Our liability is governed by section 13 of the
+                    <a href="terms.html#liability">Terms of Use</a>: in short, we are
+                    fully liable for intent and gross negligence, for injury to life,
+                    body or health, and under the German Product Liability Act; for
+                    slight negligence we are liable only for breach of a material
+                    contractual obligation and then only for foreseeable, typical damage;
+                    all further liability is excluded. Mandatory statutory rights of
+                    consumers are not affected.
+                </p>
+            </section>
+
+            <section class="block" id="apple">
+                <h2>12. Apple App Store — additional terms</h2>
+                <p>
+                    This section applies when you obtain the app from the Apple App Store.
+                    It reflects the minimum terms Apple requires. In this section,
+                    <strong>“Apple”</strong> means Apple Inc.
+                </p>
+                <ul>
+                    <li><strong>Acknowledgement.</strong> This EULA is between you and us
+                        only, not Apple. We, not Apple, are solely responsible for the app
+                        and its content. Apple has no obligation to provide any
+                        maintenance or support for the app.</li>
+                    <li><strong>Scope of licence.</strong> The licence granted to you is
+                        limited to a non-transferable licence to use the app on any
+                        Apple-branded products that you own or control, as permitted by
+                        the Usage Rules in the Apple Media Services Terms and Conditions,
+                        except that the app may be accessed and used by other accounts
+                        associated with you via Family Sharing or volume purchasing.</li>
+                    <li><strong>Maintenance and support.</strong> We are solely
+                        responsible for providing any maintenance and support for the
+                        app, as specified in this EULA or as required by law. Apple has
+                        no obligation whatsoever to furnish any maintenance and support
+                        services for the app.</li>
+                    <li><strong>Warranty.</strong> We are solely responsible for any
+                        product warranties, whether express or implied by law, to the
+                        extent not effectively disclaimed. If the app fails to conform to
+                        any applicable warranty, you may notify Apple, and Apple will
+                        refund the purchase price of the app (if any) to you; to the
+                        maximum extent permitted by law, Apple has no other warranty
+                        obligation whatsoever with respect to the app.</li>
+                    <li><strong>Product claims.</strong> We, not Apple, are responsible
+                        for addressing any claims by you or a third party relating to the
+                        app or your possession and/or use of it, including product
+                        liability claims, any claim that the app fails to conform to any
+                        applicable legal or regulatory requirement, and claims arising
+                        under consumer protection, privacy or similar legislation,
+                        including in connection with the app's use of frameworks that
+                        process health or fitness data (not applicable to Sundae).</li>
+                    <li><strong>Intellectual property rights.</strong> In the event of any
+                        third-party claim that the app or your possession and use of it
+                        infringes that third party's intellectual property rights, we,
+                        not Apple, are solely responsible for the investigation, defence,
+                        settlement and discharge of that claim.</li>
+                    <li><strong>Legal compliance.</strong> You represent and warrant that
+                        you are not located in a country subject to a U.S. Government
+                        embargo, or that has been designated by the U.S. Government as a
+                        “terrorist supporting” country, and that you are not listed on any
+                        U.S. Government list of prohibited or restricted parties.</li>
+                    <li><strong>Developer name and address.</strong> Questions,
+                        complaints or claims about the app should be directed to
+                        Philipp Ludwig Syring, Lange-Geismar-Str. 62, 37073 Göttingen,
+                        Germany,
+                        <a href="mailto:support@sundae.pro">support@sundae.pro</a>.</li>
+                    <li><strong>Third-party terms.</strong> You must comply with
+                        applicable third-party terms of agreement when using the app.</li>
+                    <li><strong>Third-party beneficiary.</strong> You acknowledge and
+                        agree that Apple and Apple's subsidiaries are third-party
+                        beneficiaries of this EULA, and that upon your acceptance of this
+                        EULA, Apple will have the right (and will be deemed to have
+                        accepted the right) to enforce this EULA against you as a
+                        third-party beneficiary of it.</li>
+                </ul>
+            </section>
+
+            <section class="block" id="google">
+                <h2>13. Google Play</h2>
+                <p>
+                    When you obtain the app from Google Play, the Google Play Terms of
+                    Service and the usage rules there also apply to your download and use
+                    of the app. Where those rules conflict with this EULA for a Google
+                    Play download, the Google Play rules apply to that conflict.
+                </p>
+            </section>
+
+            <section class="block" id="changes">
+                <h2>14. Changes</h2>
+                <p>
+                    We may update this EULA when the app or the law changes. The “last
+                    updated” date above reflects the current version, and we will give
+                    notice of material changes in the app or by email. Continuing to use
+                    the app after a change takes effect means you accept the updated EULA.
+                </p>
+            </section>
+
+            <section class="block" id="law">
+                <h2>15. Governing law</h2>
+                <p>
+                    This EULA is governed by the law of the Federal Republic of Germany,
+                    excluding its conflict-of-law rules and the UN Convention on Contracts
+                    for the International Sale of Goods. If you are a consumer, this does
+                    not deprive you of the protection of mandatory provisions of the law
+                    of your country of habitual residence. The Apple-specific terms in
+                    section 12 are interpreted consistently with Apple's required
+                    wording.
+                </p>
+            </section>
+
+            <section class="block" id="contact">
+                <h2>16. Contact and legal notice</h2>
+                <p>
+                    Philipp Ludwig Syring<br>
+                    Lange-Geismar-Str. 62, 37073 Göttingen, Germany<br>
+                    Email: <a href="mailto:support@sundae.pro">support@sundae.pro</a><br>
+                    Provider identification: <a href="imprint.html">Legal notice</a>
+                </p>
+                <p>
+                    We aim to answer within 24&nbsp;hours.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <span>© <span id="year">2026</span> Sundae</span>
+            <span class="links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="imprint.html">Legal notice</a>
+            </span>
+        </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
