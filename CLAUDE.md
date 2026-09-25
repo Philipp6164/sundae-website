@@ -21,6 +21,12 @@ Hosted on **GitHub Pages** at **sundae.pro** (see `CNAME`).
   - terms of use: [terms.html](terms.html) ↔ [nutzungsbedingungen.html](nutzungsbedingungen.html)
   - § 5 DDG legal notice: [imprint.html](imprint.html) ↔ [impressum.html](impressum.html)
 
+- **Account deletion instructions** (required by Google Play's Data Safety form, linked from
+  its "Konto-URL löschen" field): [delete-account.html](delete-account.html) ↔
+  [konto-loeschen.html](konto-loeschen.html). Numbered in-app steps + the "without the app"
+  email path + a short what's-deleted/what's-kept summary consistent with privacy.html §8/§11.
+  Not part of the EN/DE legal-page pair above, but follows the same template/CSS.
+
   There is **no separate EULA**. It was dissolved into the Terms: Apple Guideline 1.2
   (zero tolerance for objectionable content / filter + report + block / act within 24h)
   lives in Terms §6 (`#objectionable` subsection) + §10 (moderation); the app licence +
@@ -55,7 +61,7 @@ sync by hand) and cross-link each other in their footers + TOCs.
   collapses grids, swaps in the `.nav-toggle` menu, turns the week grid into rows.
 - **Legal pages** share a narrower reading layout (760px) and a `.toc`. The `.placeholder`
   CSS (peach background) is retained but no placeholders remain — all operator details
-  are filled in: Philipp Ludwig Syring, Lange-Geismar-Str. 62, 37073 Göttingen; email
+  are filled in: Philipp Ludwig Syring, Otto-Lauffer-Str. 3a, 37077 Göttingen; email
   `support@sundae.pro`; Kleinunternehmer § 19 UStG; Supabase region EU/West (Ireland);
   no Discord/Slack — reports are reviewed via a local admin tool that hits Supabase directly.
 

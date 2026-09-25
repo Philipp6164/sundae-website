@@ -15,6 +15,10 @@
     <meta property="og:description" content="One match every Sunday. No swiping. Personality first.">
     <meta property="og:type" content="website">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg: #F7F5F2;
@@ -34,6 +38,12 @@
 
             --maxw: 1180px;
             --radius: 24px;
+
+            --serif: 'Lora', Georgia, 'Times New Roman', serif;
+            --hand: 'Caveat', cursive;
+            --shadow-soft: 0 2px 6px rgba(23, 23, 23, .04);
+            --shadow-card: 0 24px 60px -20px rgba(41, 34, 24, .16);
+            --shadow-card-hover: 0 32px 80px -20px rgba(41, 34, 24, .22);
         }
 
         * {
@@ -121,7 +131,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 34px rgba(23, 23, 23, .16);
+            box-shadow: 0 16px 36px rgba(41, 34, 24, .2);
         }
 
         .btn-ghost {
@@ -145,7 +155,7 @@
         }
 
         section {
-            padding: clamp(88px, 13vw, 168px) 0;
+            padding: clamp(96px, 14vw, 188px) 0;
         }
 
         .section-head {
@@ -154,28 +164,42 @@
 
         .section-head .eyebrow {
             display: block;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-head .eyebrow::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 1px;
+            background: var(--faint-2);
         }
 
         h2.display {
+            font-family: var(--serif);
             font-size: clamp(38px, 6vw, 76px);
-            line-height: 1;
-            letter-spacing: -0.055em;
-            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -0.015em;
+            font-weight: 500;
         }
 
         .lede {
-            margin-top: 26px;
+            margin-top: 28px;
             font-size: clamp(16px, 1.7vw, 19px);
-            line-height: 1.65;
+            line-height: 1.7;
             color: var(--muted-2);
             max-width: 560px;
         }
 
         .reveal {
             opacity: 0;
-            transform: translateY(22px);
-            transition: opacity .7s ease, transform .7s ease;
+            transform: translateY(28px) scale(.99);
+            transition: opacity .9s cubic-bezier(.16,.8,.24,1), transform .9s cubic-bezier(.16,.8,.24,1);
         }
 
         .reveal.in {
@@ -213,9 +237,11 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-family: var(--serif);
+            font-size: 23px;
             font-weight: 600;
-            letter-spacing: -1px;
+            font-style: italic;
+            letter-spacing: -0.01em;
             color: var(--ink);
         }
 
@@ -292,13 +318,16 @@
             text-align: center;
             padding: 128px 20px 96px;
             position: relative;
+            background:
+                radial-gradient(ellipse 900px 520px at 50% -8%, rgba(216, 199, 175, .35), transparent 60%),
+                radial-gradient(ellipse 700px 500px at 88% 18%, rgba(184, 171, 156, .22), transparent 55%);
         }
 
         .hero .eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 9px;
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
 
         .sunday-dot {
@@ -309,28 +338,30 @@
         }
 
         .hero h1 {
-            font-size: clamp(54px, 10vw, 132px);
-            line-height: 0.88;
-            letter-spacing: -0.06em;
-            font-weight: 600;
-            max-width: 12ch;
+            font-family: var(--serif);
+            font-size: clamp(52px, 9.4vw, 124px);
+            line-height: 0.98;
+            letter-spacing: -0.015em;
+            font-weight: 500;
+            max-width: 13ch;
         }
 
         .hero h1 .light {
-            font-weight: 400;
+            font-weight: 500;
+            font-style: italic;
             color: var(--muted);
         }
 
         .hero p.sub {
             max-width: 480px;
-            margin-top: 34px;
+            margin-top: 36px;
             font-size: clamp(16px, 1.9vw, 19px);
-            line-height: 1.6;
+            line-height: 1.65;
             color: var(--muted-2);
         }
 
         .hero-actions {
-            margin-top: 38px;
+            margin-top: 42px;
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
@@ -358,9 +389,10 @@
         .statement .eyebrow { color: #8b8681; }
 
         .statement h2 {
-            font-size: clamp(34px, 5.4vw, 68px);
-            line-height: 1.05;
-            letter-spacing: -0.045em;
+            font-family: var(--serif);
+            font-size: clamp(32px, 5.2vw, 64px);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
             font-weight: 500;
             max-width: 16ch;
         }
@@ -404,6 +436,12 @@
             overflow: hidden;
         }
 
+        /* five steps in a 2-column grid: the last one closes the loop full-width
+           instead of leaving an empty half-row */
+        .steps .step:last-child {
+            grid-column: 1 / -1;
+        }
+
         .step {
             background: var(--bg);
             padding: clamp(28px, 4vw, 52px);
@@ -411,21 +449,174 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: background .3s ease;
+            position: relative;
+            transition: background .3s ease, box-shadow .3s ease, transform .3s ease;
         }
 
-        .step:hover { background: var(--white); }
+        .step:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-card);
+            transform: translateY(-3px);
+            z-index: 1;
+        }
 
-        .step .num { font-size: 12px; color: var(--faint); letter-spacing: 1px; }
+        .step .num { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--faint); letter-spacing: .5px; }
 
         .step h3 {
+            font-family: var(--serif);
             font-size: clamp(22px, 2.4vw, 29px);
-            letter-spacing: -0.03em;
+            letter-spacing: -0.005em;
             margin-bottom: 14px;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .step p { color: var(--muted-2); font-size: 15px; line-height: 1.65; max-width: 40ch; }
+
+        /* =========================================================
+           POSTCARD DEMO
+        ========================================================= */
+
+        .postcard-demo {
+            background: var(--card-2);
+        }
+
+        .postcard-demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 8vw, 100px);
+            align-items: center;
+        }
+
+        .postcard-demo-copy h2 { font-size: clamp(34px, 5vw, 64px); }
+        .postcard-demo-copy p.lede { margin-top: 26px; }
+
+        .postcard-demo-copy ul {
+            margin-top: 28px;
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .postcard-demo-copy li {
+            display: flex;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        .postcard-demo-copy li::before {
+            content: "";
+            flex: none;
+            width: 6px;
+            height: 6px;
+            margin-top: 8px;
+            border-radius: 50%;
+            background: var(--faint);
+        }
+
+        .postcard-demo-visual {
+            perspective: 1800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .postcard-flip {
+            position: relative;
+            width: min(100%, 300px);
+            aspect-ratio: 4 / 5;
+            transform-style: preserve-3d;
+            transition: transform 1.15s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        .postcard-flip.flipped { transform: rotateY(180deg); }
+
+        .postcard-face {
+            position: absolute;
+            inset: 0;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            background: #fff;
+        }
+
+        .postcard-face.front { padding: 10px; }
+
+        .postcard-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            background: radial-gradient(circle at 50% 30%, #ded4c9 0, #b8ab9c 32%, #8a7d6d 58%, #4b4238 100%);
+        }
+
+        .postcard-face.back {
+            transform: rotateY(180deg);
+            padding: 9px;
+            background:
+                repeating-linear-gradient(
+                    -45deg,
+                    #a24545 0 10px, #fff 10px 20px, #33507e 20px 30px, #fff 30px 44px
+                );
+        }
+
+        .postcard-back-inner {
+            height: 100%;
+            background: #fdfcf9;
+            border-radius: 11px;
+            padding: clamp(18px, 3vw, 26px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .postcard-stamp {
+            align-self: flex-end;
+            width: 64px;
+            padding: 6px;
+            border: 2px dashed var(--line-strong);
+            border-radius: 6px;
+            text-align: center;
+            transform: rotate(4deg);
+        }
+
+        .postcard-stamp-art {
+            height: 44px;
+            border-radius: 3px;
+            background: linear-gradient(160deg, #cfe0df 0%, #8fb8b3 45%, #3f6e69 100%);
+        }
+
+        .postcard-stamp span {
+            display: block;
+            margin-top: 5px;
+            font-size: 8px;
+            letter-spacing: .4px;
+            color: var(--faint);
+        }
+
+        .postcard-note {
+            font-family: var(--hand);
+            font-size: clamp(20px, 2.6vw, 25px);
+            line-height: 1.3;
+            color: var(--ink-soft);
+        }
+
+        .postcard-meta {
+            font-size: 12px;
+            color: var(--faint);
+        }
+
+        .postcard-demo-caption {
+            margin-top: 22px;
+            font-size: 13px;
+            color: var(--faint);
+            text-align: center;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .postcard-flip { transition: none; }
+        }
 
         /* =========================================================
            THE WEEK
@@ -450,10 +641,14 @@
         .day:last-child { border-right: none; }
 
         .day .d { font-size: 11px; text-transform: uppercase; letter-spacing: 1.4px; color: var(--faint); }
-        .day .t { margin-top: 48px; font-size: 15px; font-weight: 600; }
+        .day .t { margin-top: 48px; font-family: var(--serif); font-size: 16px; font-weight: 500; }
         .day .x { margin-top: 7px; font-size: 12px; line-height: 1.5; color: var(--muted-2); }
 
+        .day { transition: background .3s ease; }
+        .day:hover { background: var(--card); }
+
         .day.sunday { background: var(--dark); color: #fff; }
+        .day.sunday:hover { background: var(--dark); }
         .day.sunday .d, .day.sunday .x { color: #8b8681; }
 
         /* =========================================================
@@ -469,7 +664,7 @@
             align-items: center;
         }
 
-        .personality-copy h2 { font-size: clamp(36px, 5.4vw, 72px); }
+        .personality-copy h2 { font-size: clamp(34px, 5vw, 64px); }
         .personality-copy p { margin-top: 30px; }
 
         .personality-copy ul {
@@ -502,8 +697,16 @@
             background: #fff;
             border-radius: 26px;
             padding: 12px;
-            box-shadow: 0 30px 80px rgba(23, 23, 23, .1);
+            box-shadow: var(--shadow-card);
+            transition: box-shadow .4s ease, transform .4s ease;
         }
+
+        .profile-card:hover {
+            box-shadow: var(--shadow-card-hover);
+            transform: translateY(-4px);
+        }
+
+        .profile-name { font-family: var(--serif); }
 
         .profile-photo {
             height: 380px;
@@ -596,9 +799,15 @@
             border: 1px solid #2c2b29;
             border-radius: 20px;
             padding: 28px;
+            transition: border-color .3s ease, transform .3s ease;
         }
 
-        .insight-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+        .insight-card:hover {
+            border-color: #3a3835;
+            transform: translateY(-3px);
+        }
+
+        .insight-card h3 { font-family: var(--serif); font-size: 19px; font-weight: 500; margin-bottom: 10px; }
         .insight-card p { font-size: 14px; line-height: 1.6; color: #a8a39c; }
 
         .meter { margin-top: 18px; display: grid; gap: 10px; }
@@ -629,7 +838,7 @@
             align-items: center;
         }
 
-        .plus-copy h2 { font-size: clamp(36px, 5.4vw, 72px); }
+        .plus-copy h2 { font-size: clamp(34px, 5vw, 64px); }
 
         .plus-features {
             margin-top: 34px;
@@ -660,14 +869,21 @@
             background: var(--white);
             border: 1px solid var(--line);
             border-radius: 26px;
-            padding: 36px;
+            padding: 40px 36px;
             text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: box-shadow .4s ease, transform .4s ease;
+        }
+
+        .price-card:hover {
+            box-shadow: var(--shadow-card-hover);
+            transform: translateY(-4px);
         }
 
         .price-card .eyebrow { display: block; margin-bottom: 18px; }
 
         .price-row { display: flex; align-items: baseline; justify-content: center; gap: 6px; }
-        .price-row .amount { font-size: 44px; font-weight: 600; letter-spacing: -0.04em; }
+        .price-row .amount { font-family: var(--serif); font-size: 46px; font-weight: 500; letter-spacing: -0.01em; }
         .price-row .per { font-size: 14px; color: var(--muted-2); }
 
         .price-card .note { margin-top: 14px; font-size: 13px; line-height: 1.6; color: var(--faint); }
@@ -691,8 +907,13 @@
             overflow: hidden;
         }
 
-        .safety-item { background: var(--card-2); padding: clamp(24px, 3.4vw, 40px); }
-        .safety-item h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+        .safety-item {
+            background: var(--card-2);
+            padding: clamp(24px, 3.4vw, 40px);
+            transition: background .3s ease;
+        }
+        .safety-item:hover { background: var(--white); }
+        .safety-item h3 { font-family: var(--serif); font-size: 18px; font-weight: 500; margin-bottom: 8px; }
         .safety-item p { font-size: 14px; line-height: 1.6; color: var(--muted-2); }
 
         /* =========================================================
@@ -709,12 +930,16 @@
         .faq summary {
             list-style: none;
             cursor: pointer;
-            padding: 18px 44px 18px 0;
-            font-size: clamp(16px, 2vw, 19px);
-            font-weight: 600;
-            letter-spacing: -0.01em;
+            padding: 20px 44px 20px 0;
+            font-family: var(--serif);
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 500;
+            letter-spacing: -0.005em;
             position: relative;
+            transition: color .2s ease;
         }
+
+        .faq summary:hover { color: var(--muted); }
 
         .faq summary::-webkit-details-marker { display: none; }
 
@@ -744,7 +969,9 @@
         ========================================================= */
 
         .cta {
-            background: var(--dark);
+            background:
+                radial-gradient(ellipse 900px 500px at 50% 0%, rgba(255, 255, 255, .05), transparent 60%),
+                var(--dark);
             color: #fff;
             text-align: center;
         }
@@ -752,10 +979,12 @@
         .cta .eyebrow { color: #8b8681; display: block; margin-bottom: 22px; }
 
         .cta h2 {
-            font-size: clamp(48px, 9vw, 118px);
-            line-height: 0.9;
-            letter-spacing: -0.06em;
-            font-weight: 600;
+            font-family: var(--serif);
+            font-size: clamp(46px, 8.4vw, 108px);
+            line-height: 1;
+            letter-spacing: -0.015em;
+            font-weight: 500;
+            font-style: italic;
         }
 
         .cta p {
@@ -867,7 +1096,7 @@
             .steps, .safety-grid { grid-template-columns: 1fr; }
             .steps-head { flex-direction: column; align-items: flex-start; gap: 20px; }
 
-            .personality-grid, .plus-grid { grid-template-columns: 1fr; }
+            .personality-grid, .plus-grid, .postcard-demo-grid { grid-template-columns: 1fr; }
             .plus-copy { order: 2; }
 
             .days { grid-template-columns: 1fr; border-bottom: none; }
@@ -981,19 +1210,30 @@
                         </div>
                     </div>
                     <div class="step">
-                        <span class="num">02 — NO ENDLESS FEED</span>
+                        <span class="num">02 — TUESDAY</span>
                         <div>
-                            <h3>Nothing to swipe. Nothing to scroll.</h3>
+                            <h3>Nobody's left without a chance</h3>
                             <p>
-                                There's no swiping and no endless feed. One person, one
-                                conversation, and a real reason to look closer. If you're
-                                curious, a short Discover shelf shows a few more people
-                                near you — never a bottomless pile.
+                                No match on Sunday, or it ended early through no fault of
+                                yours? Sundae tries again on Tuesday, with priority — a
+                                second chance in the same week, not just next Sunday.
                             </p>
                         </div>
                     </div>
                     <div class="step">
-                        <span class="num">03 — PERSONALITY</span>
+                        <span class="num">03 — DISCOVER &amp; POSTCARDS</span>
+                        <div>
+                            <h3>Nothing to swipe. Something to write.</h3>
+                            <p>
+                                No endless feed — just twelve people near you each day.
+                                Instead of swiping, you send a short postcard to whoever
+                                appeals to you. Write enough back and forth, and you can
+                                both agree to a guaranteed match next Sunday.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="num">04 — PERSONALITY</span>
                         <div>
                             <h3>Personality comes first</h3>
                             <p>
@@ -1003,7 +1243,7 @@
                         </div>
                     </div>
                     <div class="step">
-                        <span class="num">04 — FEEDBACK</span>
+                        <span class="num">05 — FEEDBACK</span>
                         <div>
                             <h3>Sundae learns</h3>
                             <p>
@@ -1012,6 +1252,45 @@
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POSTCARD DEMO -->
+        <section class="postcard-demo">
+            <div class="wrap postcard-demo-grid">
+                <div class="postcard-demo-copy reveal">
+                    <span class="eyebrow" style="display:block;margin-bottom:22px;">Discover &amp; postcards</span>
+                    <h2>Nobody swipes. Somebody writes.</h2>
+                    <p class="lede">
+                        Twelve people near you, every day. If someone catches your eye,
+                        you send them a short postcard instead of a like — it arrives the
+                        next morning, dream destination and all.
+                    </p>
+                    <ul>
+                        <li>Twelve people a day, refreshed every morning — nothing to reject</li>
+                        <li>A short handwritten-style note, not a like button</li>
+                        <li>Write enough back and forth and you can both lock in a sure match</li>
+                    </ul>
+                </div>
+
+                <div class="postcard-demo-visual reveal">
+                    <div class="postcard-flip">
+                        <div class="postcard-face front">
+                            <div class="postcard-photo"></div>
+                        </div>
+                        <div class="postcard-face back">
+                            <div class="postcard-back-inner">
+                                <div class="postcard-stamp">
+                                    <div class="postcard-stamp-art"></div>
+                                    <span>DREAM SPOT</span>
+                                </div>
+                                <div class="postcard-note">"Also team rainy-day hikes? Tell me more."</div>
+                                <div class="postcard-meta">Mara, 29 · 3 km away</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="postcard-demo-caption">This is what sending a postcard looks like.</p>
                 </div>
             </div>
         </section>
@@ -1451,6 +1730,21 @@
             document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
         } else {
             document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+        }
+
+        // Postcard flip demo — turns over once, like tapping a card in the app
+        if ('IntersectionObserver' in window) {
+            var pio = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        setTimeout(function () { entry.target.classList.add('flipped'); }, 550);
+                        pio.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.55 });
+            document.querySelectorAll('.postcard-flip').forEach(function (el) { pio.observe(el); });
+        } else {
+            document.querySelectorAll('.postcard-flip').forEach(function (el) { el.classList.add('flipped'); });
         }
     </script>
 </body>
