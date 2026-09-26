@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Safety Standards — Sundae</title>
+    <link rel="alternate" hreflang="en" href="https://sundae.pro/child-safety.html">
+    <link rel="alternate" hreflang="de" href="https://sundae.pro/kinderschutz.html">
+    <link rel="alternate" hreflang="x-default" href="https://sundae.pro/child-safety.html">
+    <meta name="description" content="Sundae's standards against child sexual abuse and exploitation (CSAE): our commitment, age requirements, how to report a concern, and how reports are handled.">
+    <meta name="theme-color" content="#F7F5F2">
+    <meta name="robots" content="index, follow">
+
+    <style>
+        :root {
+            --bg: #F7F5F2;
+            --ink: #171717;
+            --ink-soft: #292724;
+            --muted: #55514C;
+            --muted-2: #77736D;
+            --faint: #99958F;
+            --line: #E4E0DA;
+            --line-strong: #D8D4CE;
+            --card: #ECE9E4;
+            --white: #FFFFFF;
+            --dark: #171717;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink-soft);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a { color: inherit; }
+
+        img { max-width: 100%; display: block; }
+
+        .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV */
+        body > nav {
+            border-bottom: 1px solid var(--line);
+            background: var(--bg);
+        }
+        body > nav .wrap {
+            max-width: 1180px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo { font-size: 22px; font-weight: 600; letter-spacing: -1px; color: var(--ink); }
+        .back { font-size: 14px; color: var(--muted-2); }
+        .back:hover { color: var(--ink); }
+        .navright { display: flex; align-items: center; gap: 16px; }
+        .langswitch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; font-size: 12px; font-weight: 600; }
+        .langswitch a { padding: 5px 10px; color: var(--muted-2); text-decoration: none; }
+        .langswitch a.on { background: var(--ink); color: #fff; }
+        @media (max-width: 520px) {
+            body > nav .wrap { height: auto; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; gap: 10px; }
+        }
+
+        /* HEADER */
+        header.doc {
+            padding: clamp(56px, 9vw, 100px) 0 40px;
+            border-bottom: 1px solid var(--line);
+        }
+        header.doc .eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            color: var(--faint);
+        }
+        header.doc h1 {
+            margin-top: 18px;
+            font-size: clamp(34px, 6.2vw, 52px);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        header.doc .meta {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--muted-2);
+        }
+
+        /* CONTENT */
+        main { padding: 48px 0 96px; }
+
+        section.block { margin-bottom: 48px; scroll-margin-top: 84px; }
+
+        section.block h2 {
+            font-size: clamp(22px, 3.4vw, 28px);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+
+        section.block p { margin-bottom: 14px; color: var(--muted); }
+
+        section.block ul, section.block ol { margin: 0 0 14px; padding-left: 22px; color: var(--muted); }
+        section.block li { margin-bottom: 7px; }
+
+        section.block a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+
+        strong { color: var(--ink-soft); font-weight: 600; }
+
+        .callout {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 20px 22px;
+            margin: 20px 0;
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        .steps {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 14px;
+            display: grid;
+            gap: 14px;
+        }
+        .steps li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 0;
+        }
+        .steps .n {
+            flex: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--card);
+            color: var(--ink);
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .steps .t { color: var(--muted); padding-top: 3px; }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 40px 0;
+            font-size: 13px;
+            color: var(--faint);
+        }
+        footer .wrap {
+            max-width: 1180px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        footer a { color: var(--muted-2); text-decoration: none; }
+        footer a:hover { color: var(--ink); }
+        footer .links { display: flex; gap: 20px; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="wrap">
+            <a href="index.html" class="logo">sundae</a>
+            <span class="navright">
+                <span class="langswitch">
+                    <a class="on" href="child-safety.html">EN</a>
+                    <a href="kinderschutz.html">DE</a>
+                </span>
+                <a href="index.html" class="back">← Back to site</a>
+            </span>
+        </div>
+    </nav>
+
+    <header class="doc">
+        <div class="wrap">
+            <span class="eyebrow">Safety</span>
+            <h1>Child Safety Standards</h1>
+            <p class="meta">
+                Last updated: 26&nbsp;September&nbsp;2026 · Applies to the Sundae mobile app on all platforms.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <div class="callout">
+                <strong>Zero tolerance.</strong> Sundae has zero tolerance for child sexual
+                abuse and exploitation (CSAE) in any form — content, behavior, or an
+                account belonging to a minor. Any account or content in violation is
+                removed, the account is permanently and irreversibly blocked, and where
+                required by law we report it to the relevant authorities.
+            </div>
+
+            <section class="block">
+                <h2>Our commitment</h2>
+                <p>
+                    Sundae is an adult dating app. We do not permit any content or
+                    behavior that sexualizes, endangers, or exploits minors, and we do
+                    not permit minors to use the app at all. This standard applies
+                    everywhere in the app: profiles, photos, prompts, chat messages,
+                    voice messages, and postcards.
+                </p>
+            </section>
+
+            <section class="block">
+                <h2>Age requirement</h2>
+                <p>
+                    Sundae is rated 18+ and restricted to adults. Every account must
+                    provide a date of birth during sign-up, and the app hard-blocks
+                    account creation for anyone under 18 at that step — there is no way
+                    to continue past it while underage. We act immediately on any report
+                    or other indication that an account belongs to a minor, including
+                    permanently removing the account.
+                </p>
+            </section>
+
+            <section class="block">
+                <h2>How to report a concern</h2>
+                <p>
+                    Every conversation in Sundae — chat with a match and postcard
+                    conversations — has a <strong>Report</strong> option directly on
+                    that person's profile or conversation. Reporting a person also
+                    blocks them immediately and permanently; blocking cannot be undone.
+                </p>
+                <ol class="steps">
+                    <li><span class="n">1</span><span class="t">Open the conversation or profile of the person you want to report.</span></li>
+                    <li><span class="n">2</span><span class="t">Tap <strong>Report</strong> and choose a reason.</span></li>
+                    <li><span class="n">3</span><span class="t">Add any details that would help our review. Submitting the report also blocks the person right away.</span></li>
+                </ol>
+                <p>
+                    If you're not able to use the in-app report flow, or you want to
+                    report a concern about child safety specifically, email
+                    <a href="mailto:support@sundae.pro">support@sundae.pro</a> — include
+                    as much detail as you can (the person's name in the app, and
+                    screenshots if you have them).
+                </p>
+            </section>
+
+            <section class="block">
+                <h2>What happens after a report</h2>
+                <p>
+                    Reports are reviewed by a human. When a report is filed, we keep a
+                    snapshot of the relevant conversation so it can be reviewed — this
+                    is the only reason that content is retained beyond its normal
+                    lifecycle. An account found to have shared or solicited CSAE content,
+                    or to belong to a minor, is permanently banned; this is irreversible
+                    and separate from an ordinary block between two users.
+                </p>
+            </section>
+
+            <section class="block">
+                <h2>Working with authorities</h2>
+                <p>
+                    We comply with applicable child-protection laws in every market
+                    Sundae operates in. Where we identify or are made aware of CSAE
+                    content or behavior, we report it to the relevant national or
+                    regional authority (such as NCMEC in the United States, or the
+                    equivalent body elsewhere), and we cooperate with law enforcement
+                    investigations to the extent required by law.
+                </p>
+            </section>
+
+            <section class="block">
+                <h2>Contact</h2>
+                <p>
+                    The person responsible for child-safety compliance at Sundae can be
+                    reached at <a href="mailto:support@sundae.pro">support@sundae.pro</a>.
+                    This includes questions from platforms, regulators, or law
+                    enforcement about our CSAE prevention methods and policy compliance.
+                    See also our <a href="privacy.html">Privacy Policy</a> and
+                    <a href="terms.html">Terms of Use</a>.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <span>© <span id="year">2026</span> Sundae</span>
+            <span class="links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="imprint.html">Legal notice</a>
+            </span>
+        </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
