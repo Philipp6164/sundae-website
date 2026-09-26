@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sundae — Dating, slowed down.</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta
         name="description"
         content="One meaningful match every Sunday. No swiping, no feed. Personality first, photos blurred until you've really talked. Sundae is a slower, more intentional way to date."
@@ -128,27 +131,78 @@
         .hero .sub { margin-top: 22px; max-width: 460px; font-size: 17px; line-height: 1.7; color: var(--muted); }
         .hero-actions { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
 
-        /* decorative postcard, hero side */
+        /* decorative postcard, hero side — flips over as you scroll down,
+           flips back as you scroll up, like tapping a postcard in the app */
         .hero-visual { display: flex; justify-content: center; }
-        .pc {
-            width: min(280px, 84vw); background: #FBF8F2; border-radius: 14px;
-            padding: 16px; box-shadow: var(--shadow-card); transform: rotate(4deg);
-            border-image: repeating-linear-gradient(45deg, #A0393C 0 10px, #FBF8F2 10px 20px, #21607A 20px 30px, #FBF8F2 30px 40px) 10;
-            border-style: solid; border-width: 3px;
+        .pc-scene {
+            width: min(280px, 84vw); transform: rotate(4deg);
+            perspective: 1400px;
         }
-        .pc-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-        .pc-hand { font-family: var(--hand); font-size: 21px; line-height: 1.25; color: var(--ink); max-width: 150px; }
+        .pc-flip {
+            position: relative; width: 100%; aspect-ratio: 4 / 5;
+            transform-style: preserve-3d;
+            transition: transform 1s cubic-bezier(.2, .8, .2, 1);
+        }
+        .pc-flip.flipped { transform: rotateY(180deg); }
+
+        .pc-face {
+            position: absolute; inset: 0; backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            display: flex; flex-direction: column;
+            background: #FBF8F2; border-radius: 14px; padding: 16px;
+            box-shadow: var(--shadow-card);
+            border-style: solid; border-width: 3px;
+            border-image: repeating-linear-gradient(45deg, #A0393C 0 10px, #FBF8F2 10px 20px, #21607A 20px 30px, #FBF8F2 30px 40px) 10;
+        }
+        .pc-back { transform: rotateY(180deg); justify-content: space-between; }
+
+        /* front — the picture side: a small painted travel scene, like the dream
+           destination that gets stamped on a Discover postcard */
+        .pc-scene-art {
+            flex: 1; border-radius: 9px; position: relative; overflow: hidden;
+            background: linear-gradient(180deg, #F6E8CE 0%, #F0D9B6 38%, #D9A05E 46%, #3F7F86 46%, #21607A 100%);
+        }
+        .pc-scene-art::before {
+            /* sun */
+            content: ''; position: absolute; top: 14%; right: 16%; width: 26px; height: 26px;
+            border-radius: 50%; background: #F4C177; box-shadow: 0 0 0 6px rgba(244,193,119,.35);
+        }
+        .pc-scene-art::after {
+            /* hills */
+            content: ''; position: absolute; left: -10%; right: -10%; bottom: 30%; height: 46px;
+            background: #C9834A; border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            opacity: .85;
+        }
+        .pc-caption { margin-top: 12px; font-family: var(--hand); font-size: 17px; line-height: 1.2; color: var(--ink); }
+        .pc-caption span { display: block; font-family: -apple-system, sans-serif; font-size: 10px; letter-spacing: .8px; text-transform: uppercase; color: var(--faint); margin-top: 3px; }
+
+        /* back — the message side: their profile (blurred until you talk), your note, the stamp */
+        .pc-who { display: flex; align-items: center; gap: 10px; }
+        .pc-avatar {
+            width: 34px; height: 34px; border-radius: 50%; flex: none;
+            background: radial-gradient(circle at 35% 30%, #E9C9A1, #C9834A 75%);
+            filter: blur(3px);
+        }
+        .pc-back-name { font-family: var(--serif); font-size: 15px; font-weight: 600; filter: blur(1.5px); }
+        .pc-back-sub { font-size: 11px; color: var(--faint); margin-top: 1px; }
+
+        .pc-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-top: 14px; }
+        .pc-hand { font-family: var(--hand); font-size: 20px; line-height: 1.25; color: var(--ink); max-width: 150px; }
         .pc-stamp {
-            width: 52px; height: 64px; border: 2px dashed var(--line-strong); border-radius: 4px;
+            width: 46px; height: 58px; border: 2px dashed var(--line-strong); border-radius: 4px;
             background: linear-gradient(155deg, var(--accent), #16505a);
             flex: none;
         }
-        .pc-line { margin-top: 26px; border-top: 1px solid var(--line-strong); padding-top: 10px; font-size: 12px; color: var(--faint); }
+        .pc-line { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--line-strong); font-size: 12px; color: var(--faint); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .pc-flip { transition: none; }
+        }
 
         @media (max-width: 900px) {
             .hero .wrap { grid-template-columns: 1fr; text-align: left; }
             .hero-visual { order: -1; margin-bottom: 8px; justify-content: flex-start; }
-            .pc { transform: rotate(2deg); }
+            .pc-scene { transform: rotate(2deg); }
         }
 
         /* ===== HOW IT WORKS ===== */
@@ -185,7 +239,8 @@
         .match-row-top strong { font-size: 14px; }
         .tag-pill { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--accent-tint); color: var(--accent); }
         .match-track { position: relative; height: 4px; background: var(--line); border-radius: 999px; }
-        .match-dot { position: absolute; top: 50%; width: 10px; height: 10px; border-radius: 50%; transform: translate(-50%, -50%); }
+        .match-dot { position: absolute; top: 50%; width: 10px; height: 10px; border-radius: 50%; transform: translate(-50%, -50%); transition: left .2s linear; }
+        @media (prefers-reduced-motion: reduce) { .match-dot { transition: none; } }
         .match-dot.you { background: var(--ink); }
         .match-dot.them { background: var(--accent); }
 
@@ -295,12 +350,27 @@
                 </div>
 
                 <div class="hero-visual reveal">
-                    <div class="pc">
-                        <div class="pc-row">
-                            <p class="pc-hand">Also team rainy-day hikes?</p>
-                            <div class="pc-stamp"></div>
+                    <div class="pc-scene">
+                        <div class="pc-flip" id="pcFlip">
+                            <div class="pc-face pc-front">
+                                <div class="pc-scene-art" aria-hidden="true"></div>
+                                <p class="pc-caption">Reykjavík<span>Dream destination</span></p>
+                            </div>
+                            <div class="pc-face pc-back">
+                                <div class="pc-who">
+                                    <div class="pc-avatar" aria-hidden="true"></div>
+                                    <div>
+                                        <p class="pc-back-name">Jordan, 28</p>
+                                        <p class="pc-back-sub">Photo comes into focus once you talk</p>
+                                    </div>
+                                </div>
+                                <div class="pc-row">
+                                    <p class="pc-hand">Also team rainy-day hikes?</p>
+                                    <div class="pc-stamp"></div>
+                                </div>
+                                <div class="pc-line">A postcard, not a like.</div>
+                            </div>
                         </div>
-                        <div class="pc-line">A postcard, not a like.</div>
                     </div>
                 </div>
             </div>
@@ -370,11 +440,11 @@
                         <h4>HOW YOU TWO MATCH</h4>
                         <div class="match-row">
                             <div class="match-row-top"><strong>Closeness &amp; attachment</strong><span class="tag-pill">In sync</span></div>
-                            <div class="match-track"><span class="match-dot you" style="left:54%"></span><span class="match-dot them" style="left:58%"></span></div>
+                            <div class="match-track"><span class="match-dot you" data-base="54" data-amp="5" data-phase="0"></span><span class="match-dot them" data-base="58" data-amp="5" data-phase="70"></span></div>
                         </div>
                         <div class="match-row" style="margin-bottom:0;">
                             <div class="match-row-top"><strong>Conflict &amp; repair</strong><span class="tag-pill">Complementary</span></div>
-                            <div class="match-track"><span class="match-dot you" style="left:66%"></span><span class="match-dot them" style="left:38%"></span></div>
+                            <div class="match-track"><span class="match-dot you" data-base="66" data-amp="6" data-phase="140"></span><span class="match-dot them" data-base="38" data-amp="6" data-phase="210"></span></div>
                         </div>
                     </div>
 
@@ -537,6 +607,50 @@
             document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
         } else {
             document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+        }
+
+        // Scroll-linked flourishes: the hero postcard flips over as you scroll down
+        // (and back as you scroll up), and the "how you two match" dots drift gently
+        // as you scroll, like they're alive.
+        var pcFlip = document.getElementById('pcFlip');
+        var matchDots = document.querySelectorAll('.match-dot');
+        var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Always place the dots at their base position, even with reduced motion
+        matchDots.forEach(function (dot) {
+            dot.style.left = dot.getAttribute('data-base') + '%';
+        });
+
+        if ((pcFlip || matchDots.length) && !reduceMotion) {
+            var lastY = window.scrollY;
+            var ticking = false;
+
+            var updateDots = function (y) {
+                matchDots.forEach(function (dot) {
+                    var base = parseFloat(dot.getAttribute('data-base'));
+                    var amp = parseFloat(dot.getAttribute('data-amp')) || 0;
+                    var phase = parseFloat(dot.getAttribute('data-phase')) || 0;
+                    var offset = Math.sin((y + phase) / 140) * amp;
+                    var pos = Math.min(96, Math.max(4, base + offset));
+                    dot.style.left = pos + '%';
+                });
+            };
+
+            var onScroll = function () {
+                var y = window.scrollY;
+                if (pcFlip) {
+                    if (y > lastY + 4) { pcFlip.classList.add('flipped'); }
+                    else if (y < lastY - 4) { pcFlip.classList.remove('flipped'); }
+                }
+                updateDots(y);
+                lastY = y;
+                ticking = false;
+            };
+
+            updateDots(lastY);
+            window.addEventListener('scroll', function () {
+                if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+            }, { passive: true });
         }
     </script>
 </body>
