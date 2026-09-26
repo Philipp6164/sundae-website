@@ -13,9 +13,15 @@ Hosted on **GitHub Pages** at **sundae.pro** (see `CNAME`).
 
 ## Files
 
-- [index.html](index.html) — the landing page, English only (nav, hero, statement,
-  how-it-works, the week, personality/blur demo, learning loop, insights, Sundae+, safety,
-  FAQ, CTA, footer). Footer has both an EN and a DE legal-links column.
+- [index.html](index.html) — the landing page, English only. Redesigned Sep 2026 to be
+  short and scannable: nav, hero, how-it-works (3 cards folding in the old
+  personality/blur and Discover-postcard demos), Sundae+ (feature list + a small
+  two-person compatibility-meter visual, echoing the app's own "How you two match"
+  screen), safety, FAQ, CTA, footer. The old separate statement / the-week / learning-loop
+  / insights sections were cut for being non-essential, not replaced — their key lines were
+  folded into one-sentence asides instead (see `.how-note`, FAQ answers). Footer has an
+  EN legal column, a DE legal column, and a Product column; each legal column also links
+  the matching `delete-account.html`/`konto-loeschen.html` page.
 - **Legal pages — three docs, each an English + German pair:**
   - privacy policy: [privacy.html](privacy.html) ↔ [datenschutz.html](datenschutz.html)
   - terms of use: [terms.html](terms.html) ↔ [nutzungsbedingungen.html](nutzungsbedingungen.html)
@@ -46,24 +52,48 @@ sync by hand) and cross-link each other in their footers + TOCs.
 
 ## Conventions
 
-- **Design system mirrors the app.** Palette on `:root` (`--bg:#F7F5F2`, `--ink:#171717`,
-  `--muted*`, `--faint*`, `--card`, `--line*`, `--dark`). Dark sections
-  (`.statement`, `.insights`, `.cta`, `footer`) invert to `#171717`/white explicitly.
-  Type: system font stack, headings `font-weight:600` with tight negative
-  `letter-spacing`; small uppercase `.eyebrow` labels; pill buttons (`.btn`,
+- **Design system mirrors the app**, now including its accent colour, not just its
+  neutrals. Palette on `:root`: `--bg:#F7F5F2`, `--ink:#171717`, `--muted*`, `--faint`,
+  `--card`, `--line*`, and `--accent:#217885` / `--accent-tint` / `--accent-tint-border` —
+  copied from the app's own `src/theme.ts`, which calls it "the single deliberate pop of
+  colour" and says to use it sparingly (thin strokes, small fills, never on primary
+  buttons or body text). On the site that means the `.dot` after "sundae", the
+  `.sunday-dot`, postcard stamps, and the compatibility-meter dots — nothing else. Heading
+  font is `Lora` (serif); the postcard/handwritten touches (`.pc-hand`, `.mini-pc span`)
+  use `Caveat`. Small uppercase `.eyebrow` labels; pill buttons (`.btn`,
   `border-radius:999px`).
 - **`index.html` is a stack of `<section>`s**, each with a `/* ===== NAME ===== */` CSS
-  banner. In-page nav uses section `id`s (`#how`, `#week`, `#personality`, `#plus`,
-  `#safety`, `#faq`, `#join`) with smooth scroll — a new nav link needs the matching `id`.
+  banner. In-page nav uses section `id`s (`#how`, `#plus`, `#safety`, `#faq`, `#join`) with
+  smooth scroll — a new nav link needs the matching `id`. (`#week` and `#personality` were
+  removed in the Sep 2026 redesign; don't re-add links to them.)
 - **`.reveal`** elements fade in via one `IntersectionObserver`; gated by
   `prefers-reduced-motion`.
 - **Responsive**: main breakpoint `@media (max-width:820px)` (plus 900/480px tweaks) —
-  collapses grids, swaps in the `.nav-toggle` menu, turns the week grid into rows.
+  collapses the hero/Sundae+ two-column grids to one column, the how/safety card grids to
+  fewer columns, and swaps in the `.nav-toggle` menu.
 - **Legal pages** share a narrower reading layout (760px) and a `.toc`. The `.placeholder`
   CSS (peach background) is retained but no placeholders remain — all operator details
   are filled in: Philipp Ludwig Syring, Otto-Lauffer-Str. 3a, 37077 Göttingen; email
   `support@sundae.pro`; Kleinunternehmer § 19 UStG; Supabase region EU/West (Ireland);
   no Discord/Slack — reports are reviewed via a local admin tool that hits Supabase directly.
+
+## Store distribution is deliberately restricted to the EU/Germany
+
+The operator had ticked "available worldwide" in App Store Connect / Play Console. After
+comparing Hinge's privacy policy (Sep 2026), we flagged that worldwide availability would
+likely trigger US state privacy laws that have **no small-business threshold** — notably
+Washington's My Health My Data Act and Nevada's consumer health data law (NRS 603A), both
+written broadly enough to plausibly sweep in dating-preference data. Unlike CCPA/VCDPA/CPA/
+CTDPA/UCPA (which all have revenue or record-count thresholds a pre-launch Kleinunternehmer
+won't meet), WA/NV apply based on "conducting business" in the state, with no such floor.
+
+**Decision: narrow store availability to the EU (or Germany) instead of adding a US
+consumer-health-data supplement.** This also matches the site's own "launching city by
+city" copy in the CTA section. Nobody has changed the actual App Store Connect / Play
+Console setting yet as of this note — that's an action item for the operator outside this
+repo, not something committable here. If distribution is ever widened to include US states,
+revisit: Washington/Nevada consumer health data supplement, and re-check CCPA/state-law
+thresholds against actual user/revenue numbers at that time.
 
 ## Known gaps / to finish
 
@@ -113,3 +143,29 @@ The privacy policy / terms were written against the app's SQL (in the app repo,
   spots, compatibility breakdown, match history, deeper insights → terms §9, index
   Sundae+ list. Discover itself (the twelve people) is NOT a Sundae+ feature anymore.
 - app UI is en/de/fr; legal pages exist in EN + DE only (French optional)
+- Expo is legally **650 Industries Inc., 140 2nd Street, Floor 4, San Francisco, CA
+  94105, USA** — named with full entity/address in privacy §6, after comparing notes with
+  another indie developer's privacy policy (Sep 2026).
+- **Apple refund requests**: if a user disputes an App Store charge for Sundae+, Apple may
+  ask the developer for a small amount of purchase info (transaction ID, confirmation the
+  feature was delivered/worked) before deciding the refund. Documented in terms §9
+  ("Refunds" bullet) and privacy §6 (Apple/Google entry) — worded generically (describes
+  what *can* happen for any App Store subscription seller), not as a claim that this has
+  already happened. Revisit if the operator's actual practice becomes more specific (compare
+  how thorough other apps' policies get about this, e.g. what data they stopped sending
+  Apple over time).
+- Transfers §7 now names **Google, Apple and Microsoft (GitHub's parent)** specifically as
+  EU–US Data Privacy Framework participants, based on well-established public knowledge —
+  deliberately did **not** claim a specific transfer mechanism for Vonage or Expo (650
+  Industries) since their DPF status couldn't be verified live; they stay under the
+  generic "Standard Contractual Clauses" fallback. If you ever get a chance to check the
+  official DPF participant list (dataprivacyframework.gov — it's a JS app, doesn't work
+  via simple fetch) or confirm actual signed DPAs/SCCs with Vonage and Expo, tighten this.
+- Considered (and deliberately skipped) adding an "EU AI Act" transparency section for the
+  matching/quality-score model, after seeing another dev's app do this for image-recognition
+  AI. Sundae's matching is a ranking algorithm, not one of the AI Act's Art. 50 transparency
+  triggers or an Annex III high-risk category (dating/matchmaking isn't listed) — self-
+  declaring an AI Act compliance conclusion in the public doc felt like exactly the kind of
+  judgment call CLAUDE.md already flags for a lawyer, so it's not in privacy.html. The
+  existing Art. 22 GDPR paragraph in §9 already covers "no legal/similarly significant
+  automated decision" without needing AI Act framing.
