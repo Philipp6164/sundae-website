@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sundae · App holen</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <meta name="description" content="Sundae im App Store und bei Google Play: one match every Sunday.">
+    <meta name="theme-color" content="#F7F5F2">
+    <!-- a forwarding page for the QR code on the flyers: nothing to find in a search -->
+    <meta name="robots" content="noindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap" rel="stylesheet">
+
+    <script>
+        /* ===== WHERE THE QR CODE LEADS =====
+           The flyers print https://sundae.pro/app. This page sends an iPhone to the App Store and an Android phone to
+           Google Play; anything else (a computer, an unknown phone) gets both buttons.
+
+           LIVE: flip a store to true once Sundae is actually listed there. Until then that store's visitors are not
+           sent to a store page that does not exist yet: they see "coming soon" and a link to the website instead.
+           The store links themselves are already the final ones (the App Store id and the Android package exist
+           before the listing goes live), so nothing else changes on launch day. */
+        var STORES = {
+            ios: "https://apps.apple.com/app/id6813974435",
+            android: "https://play.google.com/store/apps/details?id=pro.sundae.app"
+        };
+        var LIVE = { ios: false, android: false };
+
+        var ua = navigator.userAgent || "";
+        // iPadOS reports itself as a Mac: a Mac with a touch screen is an iPad
+        var platform = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1)
+            ? "ios"
+            : /Android/i.test(ua) ? "android" : "other";
+
+        // ?src=... (e.g. sundae.pro/app?src=flyer) is handed on to Google Play as the install referrer, so the
+        // Play Console's acquisition report can tell the flyers apart; without it nothing is added
+        var src = new URLSearchParams(location.search).get("src");
+        function storeUrl(p) {
+            if (p === "android" && src) {
+                return STORES.android + "&referrer=" + encodeURIComponent("utm_source=" + src + "&utm_medium=qr");
+            }
+            return STORES[p];
+        }
+
+        // straight on, before anything is drawn
+        if (platform !== "other" && LIVE[platform]) {
+            location.replace(storeUrl(platform));
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg: #F7F5F2;
+            --ink: #171717;
+            --muted: #55514C;
+            --faint: #99958F;
+            --line-strong: #D8D4CE;
+            --accent: #217885;
+            --serif: 'Lora', Georgia, 'Times New Roman', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 16px;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        main { width: 100%; max-width: 420px; text-align: center; }
+        .logo { font-family: var(--serif); font-weight: 600; font-size: 30px; letter-spacing: -0.01em; }
+        .dot { color: var(--accent); }
+
+        h1 { margin-top: 28px; font-family: var(--serif); font-weight: 600; font-size: 28px; line-height: 1.2; letter-spacing: -0.015em; }
+        p { margin-top: 12px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+
+        .stores { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
+        .btn {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 14px 26px; border-radius: 999px; font-size: 15px; font-weight: 600;
+            border: 1px solid transparent; transition: transform .2s ease, opacity .2s ease;
+        }
+        .btn-primary { background: var(--ink); color: #fff; }
+        .btn-primary:hover { transform: translateY(-2px); }
+        .btn-ghost { border-color: var(--line-strong); color: var(--ink); }
+        .btn-ghost:hover { border-color: var(--ink); }
+        /* a store Sundae is not listed in yet: shown, but quiet and not a link */
+        .btn-soon { border-color: var(--line-strong); color: var(--faint); cursor: default; }
+        .btn-soon small { font-weight: 500; }
+        @media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; } }
+
+        .home { display: inline-block; margin-top: 26px; font-size: 14px; color: var(--faint); }
+        .home:hover { color: var(--ink); }
+    </style>
+</head>
+<body>
+    <main>
+        <a href="https://sundae.pro" class="logo">sundae<span class="dot">.</span></a>
+
+        <!-- filled in below, in the visitor's language; without JavaScript the noscript block shows both stores -->
+        <h1 id="title"></h1>
+        <p id="text"></p>
+        <div class="stores" id="stores"></div>
+        <a href="https://sundae.pro" class="home" id="home"></a>
+
+        <noscript>
+            <h1>Sundae holen</h1>
+            <div class="stores">
+                <a class="btn btn-primary" href="https://apps.apple.com/app/id6813974435">App Store</a>
+                <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=pro.sundae.app">Google Play</a>
+            </div>
+            <a href="https://sundae.pro" class="home">sundae.pro</a>
+        </noscript>
+    </main>
+
+    <script>
+        var de = /^de\b/i.test(navigator.language || "");
+        document.documentElement.lang = de ? "de" : "en";
+
+        var T = de
+            ? {
+                going: "Einen Moment, gleich geht's in den Store …",
+                soonTitle: "Sundae kommt bald",
+                soonText: {
+                    ios: "Wir sind noch nicht im App Store, aber bald. Schau dann einfach wieder vorbei, der Code bleibt der gleiche.",
+                    android: "Wir sind noch nicht bei Google Play, aber bald. Schau dann einfach wieder vorbei, der Code bleibt der gleiche.",
+                    other: "Wir sind noch nicht in den Stores, aber bald. Schau dann einfach wieder vorbei."
+                },
+                pickTitle: "Hol dir Sundae aufs Handy",
+                pickText: "Ein Match jeden Sonntag. Kein Swipen, kein Feed.",
+                soon: "bald",
+                home: "Mehr über Sundae"
+            }
+            : {
+                going: "One moment, taking you to the store …",
+                soonTitle: "Sundae is coming soon",
+                soonText: {
+                    ios: "We're not in the App Store yet, but soon. Just come back then, the code stays the same.",
+                    android: "We're not on Google Play yet, but soon. Just come back then, the code stays the same.",
+                    other: "We're not in the stores yet, but soon. Just come back then."
+                },
+                pickTitle: "Get Sundae on your phone",
+                pickText: "One match every Sunday. No swiping, no feed.",
+                soon: "soon",
+                home: "More about Sundae"
+            };
+
+        // plain text buttons on purpose: the Apple and Google Play logos may only be used as their official badges
+        function button(p, primary) {
+            var label = p === "ios" ? "App Store" : "Google Play";
+            if (!LIVE[p]) {
+                return '<span class="btn btn-soon">' + label + ' <small>· ' + T.soon + '</small></span>';
+            }
+            return '<a class="btn ' + (primary ? "btn-primary" : "btn-ghost") + '" href="' + storeUrl(p) + '">' + label + "</a>";
+        }
+
+        var title = document.getElementById("title");
+        var text = document.getElementById("text");
+        var stores = document.getElementById("stores");
+        document.getElementById("home").textContent = T.home;
+
+        if (platform !== "other" && LIVE[platform]) {
+            // on its way to the store (location.replace above); a button in case the jump is blocked
+            title.textContent = T.going;
+            stores.innerHTML = button(platform, true);
+        } else if (platform !== "other") {
+            // this phone's store is not live yet
+            title.textContent = T.soonTitle;
+            text.textContent = T.soonText[platform];
+            stores.innerHTML = button(platform, true);
+        } else if (!LIVE.ios && !LIVE.android) {
+            // a computer, and neither store is live yet
+            title.textContent = T.soonTitle;
+            text.textContent = T.soonText.other;
+            stores.innerHTML = button("ios", true) + button("android", false);
+        } else {
+            // a computer: both stores to choose from
+            title.textContent = T.pickTitle;
+            text.textContent = T.pickText;
+            stores.innerHTML = button("ios", true) + button("android", false);
+        }
+    </script>
+</body>
+</html>
